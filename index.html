@@ -1,0 +1,237 @@
+<!-- D&D Character Creator
+JS Group Assignment - Fall 2020, Section 4
+
+Group Members:
+Kevin Meisenbacher
+James Spoor
+Shalu Sharma
+Lakshika Bhanushali
+
+Professor: Shivali Dhaka -->
+
+<!DOCTYPE html> <!--  -->
+<html>
+<head>
+	<script src="index.js"></script>
+	<link rel="stylesheet" href="darkmode.css">
+</head>
+<body>
+	<!-- Top Fields -->
+	<div class="topFields">
+		<img src="https://www.dicesaloon.com/system/production/dice_saloon/events/main_images/000/000/714/full/DND_%281%29.png?1496485238" 
+		class="logo">
+		<table>
+			<tr>
+			<td><input class="namebox"/></td></tr><tr>
+			<td><br/>Character Name</td> 
+		</tr></table>
+		<table class="topFields">
+			<tr>
+				<td><input class="textbox"/></td>
+				<td><input class="textbox"/></td>
+				<td><input class="textbox"/></td>
+				<td><input class="textbox"/></td>
+			</tr>
+			<tr>
+				<td>Class & Level</td>
+				<td>Background</td>
+				<td>Player Name</td>
+				<td>Faction</td>
+			</tr>
+			<tr>
+				<td><input class="textbox"></input></td>
+				<td><input class="textbox"></input></td>
+				<td><input class="textbox"></input></td>
+				<td><input class="textbox"></input></td>
+			</tr>
+			<tr>
+				<td>Race</td>
+				<td>Alignment</td>
+				<td>Experience Points</td>
+				<td>DCI Number</td>
+			</tr>
+		</table>
+	</div>
+	<!-- Character Stats -->
+	<div class="columns">
+		<!--  Base Attributes -->
+		<div class="attributesList">
+			<div class="attributeBox">
+				<p id="statLabel">STRENGTH</p>
+				<input class="attributeInput" id="strengthInput"/>
+			</div>
+			<div class="attributeBox">
+				<p id="statLabel">DEXTERITY</p>
+				<input class="attributeInput" id="dexInput"/>
+			</div>
+			<div class="attributeBox">
+				<p id="statLabel">CONSTITUTION</p>
+				<input class="attributeInput" id="constInput"/>
+			</div>
+			<div class="attributeBox">
+				<p id="statLabel">INTELLIGENCE</p>
+				<input class="attributeInput" id="intelInput"/>
+			</div>
+			<div class="attributeBox">
+				<p id="statLabel">WISDOM</p>
+				<input class="attributeInput" id="wisdomInput"/>
+			</div>
+			<div class="attributeBox">
+				<p id="statLabel">CHARISMA</p>
+				<input class="attributeInput" id="charismaInput"/>
+			</div>
+		</div>
+		<div class="stats">
+			<div class="skillBox">
+				<table>
+					<tr>
+						<td><input class="inspirationInput" id="profBonusInput"/></td>
+						<td><p>INSPIRATION</p></td>
+					</tr>
+				</table>
+			</div>
+			<div class="skillBox">
+				<table>
+					<tr>
+						<td><input class="profBonusInput" id="profBonusInput"/></td>
+						<td><p>PROFICIENCY BONUS</p></td>
+					</tr>
+				</table>
+			</div>
+			<div class="skillBox">
+				<table>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Strength</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Dexterity</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Constitution</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Intelligence</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Wisdom</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Charisma</p></td>
+					</tr>
+				</table>
+			</div>
+			<div class="skillBox">
+				<table>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Acrobatics</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Animal Handling</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Arcana</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Athletics</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Deception</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">History</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Intimidation</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Insight</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Investigation</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Medicine</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Nature</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Perception</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Performance</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Persuasion</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Religion</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Sleight of Hand</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Stealth</p></td>
+					</tr>
+					<tr>
+						<td><input class="skillInput" id="profBonusInput"/></td>
+						<td><p class="unbuffer">Survival</p></td>
+					</tr>
+				</table>
+				<div class="skillInput">
+				</div>
+				<div class="footer">
+					<p>SKILLS</p>
+				</div>
+			</div>
+		</div>
+		<div class="attributesList">
+			<div class="armourInitiativeSpeed">
+				<div class="bigBox">
+					<input class="shield"><p class="attributesList">ARMOUR<br/>CLASS</p>
+				</div>
+				<div class="bigBox">
+					<input class="bigInput"><p class="attributesList">INITIATIVE</p>
+				</div>
+				<div class="bigBox">
+					<input class="bigInput"><p class="attributesList">SPEED</p>
+				</div> 
+			</div>
+			<br/><br/><br/>
+		<div class="skillBox">
+			<table>
+				<tr><td>Max HP: </td><td><input class="textbox"/></td></tr>
+			</table>
+		</div>
+		<div class="skillBox">
+			<table>
+				<tr><td>Current HP: </td><td><input class="textbox"/></td></tr>
+				<tr><td>Temporary HP: </td><td><input class="textbox"/></td></tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

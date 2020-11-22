@@ -1,0 +1,157 @@
+/* Dark Mode - Author: Kevin */
+* {
+	background-color: #070707;
+	color: white;
+}
+/* Gives text boxes a border to make them visible in dark mode */
+.textbox {
+	border-style: hidden;
+	border-bottom-style: solid;
+	border-color: red;
+}
+/* CSS for the logo */
+.logo {
+	width: 15.5%;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+/* Make the box for the character name big and prominent */
+.namebox {
+	border-color: red;
+	width: 80%;
+	height: 70%;
+	font-size: 150%;
+	color: gold;
+	margin-right: 300px;
+	margin-top: 55px;
+}
+/* Align basic info nice and neatly */
+.topFields {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	border-color: red;
+}
+/* STYLING FOR DETAILED STATS */
+
+/* Neatly line up all columns */
+.columns {
+	display: flex;
+	flex-direction: row;
+}
+/* Left pane for base attributes */
+.attributesList {
+	display: flex;
+	flex-direction: column;
+	background-color: #200707;
+	text-align: center;
+}
+/* Give some space in the attribute boxes to make them nice and squared */
+.attributeBox {
+	border-style: solid;
+	border-color: red;
+	border-radius: 5px;
+	margin: 10px;
+	background-color: #200707;
+	font-size: 14px;
+	width: 120px;
+}
+/* Turn text boxes into little text bubbles */
+.attributeInput {
+	border-color: red;
+	width: 60px;
+	height: 45px;
+	border-radius: 60px; 
+	margin-bottom: -200px;
+}
+#statLabel {
+	background-color: #200707;
+	margin-bottom: 80px;
+}
+/* COLUMN FOR PLAYER STATS */
+
+/* Clear pane for stats */
+.stats {
+	display: flex;
+	flex-direction: column;
+}
+/* Inspiration box */
+.inspirationInput {
+	border-color: red;
+	width: 50px;
+	height: 50px;
+	margin: -25px;
+	margin-left: 0px;
+	font-size: 150%;
+}
+/* Proficiency bonus bubble */
+.profBonusInput {
+	border-color: red;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	font-size: 150%;
+}
+/* Standard styling for most boxes */
+.skillBox {
+	display: flex;
+	flex-direction: column;
+	border-style: solid;
+	border-color: red;
+	border-radius: 10px;	
+	margin: 10px;
+}
+/* Styling for the skill inputs */
+.skillInput {
+	display: flex;
+	flex-direction: column;
+	border-style: hidden;
+	border-bottom-style: solid;
+	border-color: red;
+	width: 30px;
+	margin: -15px;
+	margin-left: 0px;
+	font-size: 150%;
+}
+/* Pack the skill labels closer together */
+.unbuffer {
+	margin-bottom: 0px;
+}
+/* Bottom text of skill boxes */
+.footer {
+	display: flex;
+	align-content: center;
+	text-align: center;
+}
+
+/* MIDDLE COLUMN */
+
+/* Line up armour class, initiative and speed at top of column */
+.armourInitiativeSpeed {
+	display: flex;
+	flex-direction: row;
+	background-color: #200707;
+	margin-right: 10px;
+}
+/* Containers for armour class, initiative and speed */
+.bigBox {
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	background-color: #200707;
+	text-align: center;
+}
+/* Box for the armour class */
+.shield {
+	border-color: red;
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+	width: 100px;
+	height: 100px;
+}
+.bigInput {
+	border-color: red;
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+}
