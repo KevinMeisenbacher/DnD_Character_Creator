@@ -208,30 +208,99 @@ Professor: Shivali Dhaka -->
 				</div>
 			</div>
 		</div>
-		<div class="attributesList">
-			<div class="armourInitiativeSpeed">
-				<div class="bigBox">
-					<input class="shield"><p class="attributesList">ARMOUR<br/>CLASS</p>
+		<div class="stack">
+			<div class="attributesList">
+				<div class="row">
+					<div class="bigBox">
+						<input class="shield"><p class="attributesList">ARMOUR<br/>CLASS</p>
+					</div>
+					<div class="bigBox">
+						<input class="bigInput"><p class="attributesList">INITIATIVE</p>
+					</div>
+					<div class="bigBox">
+						<input class="bigInput"><p class="attributesList">SPEED</p>
+					</div> 
 				</div>
-				<div class="bigBox">
-					<input class="bigInput"><p class="attributesList">INITIATIVE</p>
-				</div>
-				<div class="bigBox">
-					<input class="bigInput"><p class="attributesList">SPEED</p>
-				</div> 
+				<br/><br/><br/>
+			<div class="skillBox">
+				<table>
+					<tr><td>Max HP: </td><td><input class="textbox"/></td></tr>
+				</table>
 			</div>
-			<br/><br/><br/>
-		<div class="skillBox">
-			<table>
-				<tr><td>Max HP: </td><td><input class="textbox"/></td></tr>
-			</table>
+			<div class="skillBox">
+				<table>
+					<tr><td>Current HP: </td><td><input class="textbox"/></td></tr>
+					<tr><td>Temporary HP: </td><td><input class="textbox"/></td></tr>
+				</table>
+			</div>
+			<div class="row">
+				<div class="bigInput">
+					Total<input class="textbox">
+					<p style="text-align:center">HIT DICE</p>
+				</div>
+				<div class="bigInput">
+					SUCCESSES <p id="successes">
+					FAILURES <p id="failures">
+					<p style="text-align: center">DEATH SAVES</p>
+				</div>
+			</div>
 		</div>
 		<div class="skillBox">
-			<table>
-				<tr><td>Current HP: </td><td><input class="textbox"/></td></tr>
-				<tr><td>Temporary HP: </td><td><input class="textbox"/></td></tr>
-			</table>
+			<div class="stats">
+				<div class="columns">
+					<div class="stats">
+						<p>NAME</p>
+						<input class="littleInput">
+						<input class="littleInput">
+						<input class="littleInput">
+					</div>
+					<div class="stats">
+						<p>Atk Bonus</p>
+						<input class="littleInput">
+						<input class="littleInput">
+						<input class="littleInput">
+					</div>
+					<div class="stats">
+						<p>DAMAGE/TYPE</p>
+						<input class="littleInput">
+						<input class="littleInput">
+						<input class="littleInput">
+					</div>
+				</div>
+				<br/>
+				<input class="littleInput"></input>
+				<input class="littleInput"></input>
+				<input class="littleInput"></input>
+				<input class="littleInput"></input>
+				<input class="littleInput"></input>
+				<input class="littleInput"></input>
+				<input class="littleInput"></input>
+				<input class="littleInput"></input>
+				<input class="littleInput"></input>
+				<input class="littleInput"></input>
+				<p style="text-align: center">ATTACKS & SPELLCASTING</p>
+			</div>
 		</div>
 	</div>
+	<div class="stats">
+		<p style="margin-left: 10px">PERSONALITY TRAITS</p><textarea class="traitBox"></textarea>
+		<p style="margin-left: 10px">IDEALS</p><textarea class="traitBox"></textarea>
+		<p style="margin-left: 10px">BONDS</p><textarea class="traitBox"></textarea>
+		<p style="margin-left: 10px">FLAWS</p><textarea class="traitBox"></textarea>
+		<div class="skillBox">
+			<input class="littleInput"></input>
+			<input class="littleInput"></input>
+			<input class="littleInput"></input>
+			<input class="littleInput"></input>
+			<input class="littleInput"></input>
+			<input class="littleInput"></input>
+			<input class="littleInput"></input>
+			<input class="littleInput"></input>
+			<input class="littleInput"></input>
+			<input class="littleInput"></input>
+			<p style="text-align: center">FEATURES & TRAITS</p>
+		</div>
+	</div>
+	
 </body>
 </html>
