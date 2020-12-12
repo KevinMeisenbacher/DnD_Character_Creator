@@ -3,27 +3,23 @@
 	background-color: #070707;
 	color: white;
 }
-/* Gives text boxes a border to make them visible in dark mode */
-.textbox {
-	border-style: hidden;
-	border-bottom-style: solid;
-	border-color: red;
-}
-/* CSS for the logo */
+/* Make the logo nice */
 .logo {
-	width: 15.5%;
-	margin-bottom: 10px;
+	width: 385px;
+	height: 120px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	margin-right: 10px;
 }
 /* Make the box for the character name big and prominent */
 .namebox {
 	border-color: red;
-	width: 80%;
-	height: 70%;
+	width: 360px;
+	padding: 10px;
 	font-size: 150%;
 	color: gold;
-	margin-right: 300px;
-	margin-top: 55px;
+	margin-right: 10px;
+	margin-top: 40px;
 }
 /* Align basic info nice and neatly */
 .topFields {
@@ -31,6 +27,13 @@
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	border-color: red;
+}
+/* Text input lines */
+.textbox {
+	border-style: hidden;
+	border-bottom-style: solid;
+	border-color: red;
+	width: 145px;
 }
 /* STYLING FOR DETAILED STATS */
 
@@ -121,6 +124,7 @@
 /* Pack the skill labels closer together */
 .unbuffer {
 	margin-bottom: 0px;
+	margin-top: 12px;
 }
 /* Bottom text of skill boxes */
 .footer {
@@ -138,7 +142,7 @@
 	background-color: #200707;
 	margin-right: 10px;
 }
-/* Containers for armour class, initiative and speed */
+/* Div for armour class, initiative and speed */
 .bigBox {
 	width: 100px;
 	height: 100px;
@@ -154,12 +158,48 @@
 	width: 100px;
 	height: 100px;
 }
+/* Boxes for initiative and speed */
 .bigInput {
 	border-color: red;
 	width: 100px;
 	height: 100px;
 	border-radius: 10px;
+	font-size: 300%;
 }
+/* Div for the wide saving throw boxes */
+.wideRow {
+	display: flex;
+	flex-direction: row;
+	background-color: #200707;
+	margin-right: 30px;
+}
+/* Div for saving throws */
+.savingThrowsDiv {
+	width: 100px;
+	height: 80px;
+	text-align: left;
+	margin: 20px;
+	margin-left: 5px;
+	margin-right: 0px;
+	background-color: #200707;
+	text-align: center;
+}
+input[type=checkBox] {
+	margin: 0px;
+}
+.savingThrowBox {
+	border-style: solid;
+	border-color: red;
+	width: 170px;
+	height: 80px;
+	margin-right: 40px;
+	border-radius: 10px;
+}
+.traitText {
+	margin-left: 10px;
+	margin-bottom: 0px;
+}
+/* These divs exist on the rightmost column */
 .traitBox {
 	display: flex;
 	flex-direction: column;
@@ -167,7 +207,7 @@
 	border-color: red;
 	border-radius: 5px;	
 	margin-left: 10px;
-	height: 70px;
+	height: 65px;
 	width: 300px;
 }
 .abilityBox {
@@ -183,6 +223,31 @@
 .littleInput {
 	border-color: red;
 	border-radius: 5px;
+	margin: 2px;
+	margin-bottom: 3px;
+	padding: 5px;
+}
+.atkNameInput {
+	background-color: #200707;
+	border-color: red;
+	border-radius: 5px;
 	margin-bottom: 5px;
 	padding: 5px;
+	width: 120px;
+}
+.atkBonusInput {
+	background-color: #200707;
+	border-color: red;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+	width: 80px;
+}
+.atkDamageInput {
+	background-color: #200707;
+	border-color: red;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+	width: 120px;
 }
