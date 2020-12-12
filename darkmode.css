@@ -3,6 +3,13 @@
 	background-color: #070707;
 	color: white;
 }
+/* Align basic info nice and neatly */
+.topFields {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	border-color: red;
+}
 /* Make the logo nice */
 .logo {
 	width: 385px;
@@ -21,14 +28,7 @@
 	margin-right: 10px;
 	margin-top: 40px;
 }
-/* Align basic info nice and neatly */
-.topFields {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	border-color: red;
-}
-/* Text input lines */
+/* Top text input lines */
 .textbox {
 	border-style: hidden;
 	border-bottom-style: solid;
@@ -250,4 +250,12 @@ input[type=checkBox] {
 	margin-bottom: 5px;
 	padding: 5px;
 	width: 120px;
+}
+button {
+	border-color: red;
+	border-radius: 5px;
+	background-color: #200707;
+	padding: 5px;
+	font-size: 120%;
+	margin-left: 10px;
 }
