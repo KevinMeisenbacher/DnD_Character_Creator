@@ -10,6 +10,11 @@
 	justify-content: flex-start;
 	border-color: red;
 }
+.topFields:invalid:required {
+	border-style: dashed;
+	border-color: purple;
+	background-color: #402010;
+}
 /* Make the logo nice */
 .logo {
 	width: 385px;
@@ -28,12 +33,22 @@
 	margin-right: 10px;
 	margin-top: 40px;
 }
+.namebox:invalid:required {
+	border-style: dashed;
+	border-color: purple;
+	background-color: #402010;
+}
 /* Top text input lines */
 .textbox {
 	border-style: hidden;
 	border-bottom-style: solid;
 	border-color: red;
 	width: 145px;
+}
+.textbox:invalid:required {
+	border-style: dashed;
+	border-color: purple;
+	background-color: #402010;
 }
 /* STYLING FOR DETAILED STATS */
 
@@ -69,8 +84,13 @@
 	border-color: red;
 	width: 60px;
 	height: 45px;
-	border-radius: 60px; 
+	border-radius: 60px;
 	margin-bottom: -200px;
+}
+.attributeInput:invalid:required {
+	border-style: dashed;
+	border-color: purple;
+	background-color: #402010;
 }
 #statLabel {
 	background-color: #200707;
@@ -106,7 +126,7 @@
 	flex-direction: column;
 	border-style: solid;
 	border-color: red;
-	border-radius: 10px;	
+	border-radius: 10px;
 	margin: 10px;
 }
 /* Styling for the skill inputs */
@@ -205,7 +225,7 @@ input[type=checkBox] {
 	flex-direction: column;
 	border-style: solid;
 	border-color: red;
-	border-radius: 5px;	
+	border-radius: 5px;
 	margin-left: 10px;
 	height: 65px;
 	width: 300px;
@@ -215,7 +235,7 @@ input[type=checkBox] {
 	flex-direction: column;
 	border-style: solid;
 	border-color: red;
-	border-radius: 5px;	
+	border-radius: 5px;
 	margin-left: 10px;
 	height: 350px;
 	width: 300px;
@@ -259,6 +279,12 @@ button {
 	font-size: 120%;
 	margin-left: 10px;
 }
+
+/* Hide the character sheet until character is created */
+.characterSheet {
+	display: hidden;
+}
+/* Class by James Spoor - Hides the unselected character bodies*/
 .hidden {
 	display:none
 }

@@ -10,6 +10,11 @@
 	justify-content: flex-start;
 	border-color: red;
 }
+.topFields:invalid {
+	border-style: dashed;
+	border-color: purple;
+	background-color: #402010;
+}
 /* Make the logo nice */
 .logo {
 	width: 385px;
@@ -28,12 +33,22 @@
 	margin-right: 10px;
 	margin-top: 40px;
 }
+.namebox:invalid {
+	border-style: dashed;
+	border-color: purple;
+	background-color: #402010;
+}
 /* Top text input lines */
 .textbox {
 	border-style: hidden;
 	border-bottom-style: solid;
 	border-color: red;
 	width: 145px;
+}
+.textbox:invalid {
+	border-style: dashed;
+	border-color: purple;
+	background-color: #402010;
 }
 /* STYLING FOR DETAILED STATS */
 
@@ -71,6 +86,11 @@
 	height: 45px;
 	border-radius: 60px;
 	margin-bottom: -200px;
+}
+.attributeInput:invalid {
+	border-style: dashed;
+	border-color: purple;
+	background-color: #402010;
 }
 #statLabel {
 	background-color: #200707;
