@@ -1,6 +1,9 @@
 /* Author: Kevin Meisenbacher */
 // Base Backgrounds
-const charName = document.getElementById('charName');
+
+/*const charName = document.getElementById('charName');
+
+
 const charClass = document.getElementById('charClass');
 const background = document.getElementById('charBackground');
 const playerName = document.getElementById('playerName');
@@ -88,10 +91,10 @@ for (var i=1; i<13; i++) const equipment = document.getElementById('item'[i]);
 // Leaving this up to whoever is smart enough to make an array with a text area input
 
 //Equipment
-for (var i=1; i<31; i++) const traits = document.getElementById('trait'[i]);
+for (var i=1; i<31; i++) const traits = document.getElementById('trait'[i]);*/
 
 function createCharacter() {
-	const character = new character {
+        /*var character = new character {
 		charName, charClass, background, playerName, faction, 
 		race, alignment, level, xp, dciNum,
 		strength, dex, constitution, intel, wisdom, charisma,
@@ -106,5 +109,43 @@ function createCharacter() {
 		successThrows, failThrows, deathSaves,
 		atkNames, atkBonus, atkValues,
 		atkInputs, equipment, traits
-	};
+		}*/
+		
+		
+var charName = document.getElementById('charName').value;
+document.getElementById('name').innerHTML = "Hey "+ charName +" that is an awesome name you got there !!";
+        
+var charClass = document.getElementById('charClass').value;
+document.getElementById('class').innerHTML = "Hey "+ charClass +" ";
+         
+var background = document.getElementById('charBackground').value;
+document.getElementById('bg').innerHTML = "Hey "+ background +" ";
+
+var playerName = document.getElementById('playerName').value;
+document.getElementById('plName').innerHTML = "Hey "+ playerName +" ";
+
+var level = document.getElementById('level').value;
+document.getElementById('level').innerHTML = "Hey "+ level +" ";
+
+var xp = document.getElementById('xp').value;
+document.getElementById('xp').innerHTML = "Hey "+ xp +" ";
+
+const strength = document.getElementById('strength').value;
+document.getElementById('strng').innerHTML = "Hey "+ strength +" ";
+
+const intelBonus = document.getElementById('intelBonus').value;
+document.getElementById('intel').innerHTML = "Hey "+ intelBonus +" ";
+
+const wisdomBonus = document.getElementById('wisdomBonus').value;
+document.getElementById('wis').innerHTML = "Hey "+ wisdomBonus +" ";
+
+const charBonus = document.getElementById('charBonus').value;
+document.getElementById('charBonus').innerHTML = "Hey "+ charBonus +" ";
+
+	
+	 
 }
+
+
+    	
+   
