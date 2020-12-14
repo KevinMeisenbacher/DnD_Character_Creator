@@ -26,7 +26,7 @@ function updateCharacterPortrait() {
 	//fill background
 	ctx.fillStyle = "white";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
-	
+
 	//draw character elements
 	drawBody();
 	drawFace();
@@ -45,10 +45,10 @@ function updateCharacterPortrait() {
 function drawBody() {
 	var detailString = "body"+bodyType()+gender();
 	var colorString = "body"+bodyType()+"_COLOR";
-	
+
 	var color = document.getElementById(colorString);
 	var detail = document.getElementById(detailString);
-	
+
 	drawBodyElement(color);
 	drawBodyElement(detail);
 }
@@ -56,10 +56,10 @@ function drawBody() {
 function drawFace() {
 	var detailString = "face_"+faceType.toString().padStart(2, '0');
 	var colorString = detailString+"_COLOR";
-	
+
 	var color = document.getElementById(colorString);
 	var detail = document.getElementById(detailString);
-	
+
 	drawHeadElement(color);
 	drawHeadElement(detail);
 }
@@ -67,10 +67,10 @@ function drawFace() {
 function drawLegs() {
 	var detailString = "legs"+bodyType()+gender()+"_"+legsType.toString().padStart(2, '0');
 	var colorString = detailString+"_COLOR";
-	
+
 	var color = document.getElementById(colorString);
 	var detail = document.getElementById(detailString);
-	
+
 	drawBodyElement(color);
 	drawBodyElement(detail);
 }
@@ -78,37 +78,37 @@ function drawLegs() {
 function drawTorso() {
 	var detailString = "torso"+bodyType()+gender()+"_"+torsoType.toString().padStart(2, '0');
 	var colorString = detailString+"_COLOR";
-	
+
 	var color = document.getElementById(colorString);
 	var detail = document.getElementById(detailString);
-	
+
 	drawBodyElement(color);
 	drawBodyElement(detail);
 }
 
 function drawMouth() {
 	var detailString = "mouth_"+mouthType.toString().padStart(2, '0');
-	
+
 	var detail = document.getElementById(detailString);
-	
+
 	drawHeadElement(detail);
 }
 
 function drawNose() {
 	var detailString = "nose_"+noseType.toString().padStart(2, '0');
-	
+
 	var detail = document.getElementById(detailString);
-	
+
 	drawHeadElement(detail);
 }
 
 function drawEyes() {
 	var detailString = "eyes_"+eyesType.toString().padStart(2, '0');
 	var colorString = detailString+"_COLOR";
-	
+
 	var color = document.getElementById(colorString);
 	var detail = document.getElementById(detailString);
-	
+
 	drawHeadElement(color);
 	drawHeadElement(detail);
 }
@@ -116,10 +116,10 @@ function drawEyes() {
 function drawHairTop() {
 	var detailString = "hair_top_"+hairTopType.toString().padStart(2, '0');
 	var colorString = detailString+"_COLOR";
-	
+
 	var color = document.getElementById(colorString);
 	var detail = document.getElementById(detailString);
-	
+
 	drawHeadElement(color);
 	drawHeadElement(detail);
 }
@@ -127,10 +127,10 @@ function drawHairTop() {
 function drawHairBottom() {
 	var detailString = "hair_bottom_"+hairBottomType.toString().padStart(2, '0');
 	var colorString = detailString+"_COLOR";
-	
+
 	var color = document.getElementById(colorString);
 	var detail = document.getElementById(detailString);
-	
+
 	drawHeadElement(color);
 	drawHeadElement(detail);
 }
@@ -138,10 +138,10 @@ function drawHairBottom() {
 function drawEars() {
 	var detailString = "ears_"+earsType.toString().padStart(2, '0');
 	var colorString = detailString+"_COLOR";
-	
+
 	var color = document.getElementById(colorString);
 	var detail = document.getElementById(detailString);
-	
+
 	drawHeadElement(color);
 	drawHeadElement(detail);
 }
@@ -149,10 +149,10 @@ function drawEars() {
 function drawHorns() {
 	var detailString = "horns_"+hornsType.toString().padStart(2, '0');
 	var colorString = detailString+"_COLOR";
-	
+
 	var color = document.getElementById(colorString);
 	var detail = document.getElementById(detailString);
-	
+
 	drawHeadElement(color);
 	drawHeadElement(detail);
 }
@@ -247,18 +247,18 @@ function bodyType() {
 	if (heightInput > 66) height = "tall";
 	else if (heightInput > 33) height = "average";
 	else height = "short";
-	
+
 	var weightInput = document.getElementById("weight").value;
 	var weight;
 	if (weightInput > 66) weight = "large";
 	else if (weightInput > 33) weight = "medium";
 	else weight = "thin";
-	
+
 	var strengthInput = document.getElementById("muscular").checked;
 	var strength;
 	if (strengthInput == true) strength = "strong";
 	else strength = "weak";
-	
+
 	return("_"+height+"_"+weight+"_"+strength);
 }
 
@@ -267,27 +267,27 @@ function gender() {
 	var gender;
 	if (genderInput == 0) gender = "_male";
 	else gender = "_female";
-	
+
 	return(gender);
 }
 
 function headScale() {
 	var minScale = 0.8;
-	
+
 	var height = document.getElementById("height").value;
 	return(minScale + (1-minScale) * height/100);
 }
 
 function headPosY() {
 	var minHeight = 0.525;
-	
+
 	var height = document.getElementById("height").value;
 	return(canvas.height*(1-minHeight) - canvas.height*(1-minHeight) * height/100);
 }
 
 function bodyScaleX() {
 	var minWidth = 0.6;
-	
+
 	var width = document.getElementById("weight").value;
 	return(canvas.width*minWidth + canvas.width*(1-minWidth) * width/100);
 }
@@ -298,7 +298,7 @@ function bodyPosX() {
 
 function bodyScaleY() {
 	var minHeight = 0.5;
-	
+
 	var height = document.getElementById("height").value;
 	return(canvas.height*minHeight + canvas.height*(1-minHeight) * height/100);
 }

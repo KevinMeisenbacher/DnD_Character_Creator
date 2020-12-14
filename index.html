@@ -63,11 +63,11 @@ Professor: Shivali Dhaka -->
   <div id="characterSheet">
 	<!-- Top Fields -->
 	<div class="topFields">
-		<img src="https://www.dicesaloon.com/system/production/dice_saloon/events/main_images/000/000/714/full/DND_%281%29.png?1496485238" 
+		<img src="https://www.dicesaloon.com/system/production/dice_saloon/events/main_images/000/000/714/full/DND_%281%29.png?1496485238"
 		class="logo">
 		<table>
-			<tr><td><input class="namebox" id="charName"/></td></tr>
-			<tr><td>Character Name</td> 
+			<tr><td><input type="text" class="namebox" id="charName"/></td></tr>
+			<tr><td>Character Name</td>
 		</table>
 		<table class="topFields">
 			<tr>
@@ -289,7 +289,7 @@ Professor: Shivali Dhaka -->
 					<div class="bigBox">
 						<input class="bigInput" id="speed">
 						<p class="attributesList">SPEED</p>
-					</div> 
+					</div>
 				</div>
 				<br/><br/><br/>
 			<div class="skillBox">
@@ -436,7 +436,7 @@ Professor: Shivali Dhaka -->
 				<p style="text-align: center">FEATURES & TRAITS</p>
 			</div>
 		</div>
-		
+
 		<!-- author - lakshika  -->
 
 	<div id="name"> </div>
@@ -449,45 +449,45 @@ Professor: Shivali Dhaka -->
 	<p id="intel"> </p>
 	<p id="wis"> </p>
 	<p id="charBonus"> </p>
-	
+
 		<!-- James Spoor -->
 		<div class="skillBox">
 			<canvas id="characterPortrait" width="200" height="400"></canvas><br>
-			
+
 			Male <input type="range" id="gender" min="0" max="1" value="0" oninput="updateCharacterPortrait()"> Female<br>
-			
+
 			<label for="skinTone">Skin Tone</label>
 			<input type="color" id="skinTone" value="#ffd294" onchange="updateCharacterPortrait()"><br>
-			
+
 			<label for="height">Height</label>
 			<input type="range" id="height" min="0" max="100" oninput="updateCharacterPortrait()"><br>
-			
+
 			<label for="weight">Weight</label>
 			<input type="range" id="weight" min="0" max="100" oninput="updateCharacterPortrait()"><br>
-			
+
 			<label for="muscular">Muscular</label>
 			<input type="checkbox" id="muscular" onchange="updateCharacterPortrait()"><br>
-			
+
 			<input type="button" id="face" value="Face" onclick="changeFace()"><br>
 			<table><tr>
 			<td><input type="button" id="mouth" value="Mouth" onclick="changeMouth()"></td>
 			<td><input type="button" id="nose" value="Nose" onclick="changeNose()"></td>
 			<td><input type="button" id="ears" value="Ears" onclick="changeEars()"></td>
 			</tr></table>
-			
+
 			<input type="button" id="eyes" value="Eyes" onclick="changeEyes()">
 			<input type="color" id="eyeColor" value="#00ccff" onchange="updateCharacterPortrait()"><br>
-			
+
 			<input type="button" id="hairTop" value="Hair" onclick="changeHairTop()">
 			<input type="button" id="hairBottom" value="Facial Hair" onclick="changeHairBottom()">
 			<input type="color" id="hairColor" value="#6e4102" onchange="updateCharacterPortrait()"><br>
-			
+
 			<input type="button" id="horns" value="Horns" onclick="changeHorns()">
 			<input type="color" id="hornsColor" value="#ff0000" onchange="updateCharacterPortrait()"><br>
-			
+
 			<input type="button" id="torso" value="Shirt" onclick="changeTorso()">
 			<input type="button" id="legs" value="Pants" onclick="changeLegs()"><br>
-			
+
 		</div>
 	</div>
 	<button onclick="createCharacter()">Create Character</button>
@@ -550,8 +550,8 @@ Professor: Shivali Dhaka -->
 			<img id="body_short_thin_strong_female" 	src="images/character/body/body_short_thin_strong_female.png">
 			<img id="body_short_thin_weak_male" 		src="images/character/body/body_short_thin_weak_male.png">
 			<img id="body_short_thin_weak_female" 		src="images/character/body/body_short_thin_weak_female.png">
-			
-			
+
+
 		<!-- face -->
 			<!-- color -->
 			<img id="face_00_COLOR"		src="images/character/head/face/face_00_COLOR.png">
@@ -567,7 +567,7 @@ Professor: Shivali Dhaka -->
 			<img id="face_03"			src="images/character/head/face/face_03.png">
 			<img id="face_04"			src="images/character/head/face/face_04.png">
 			<img id="face_05"			src="images/character/head/face/face_05.png">
-				
+
 		<!-- legs -->
 			<!-- color -->
 			<img id="legs_tall_large_strong_male_00_COLOR"			src="images/character/accessories/legs/legs_tall_large_strong_male_00_COLOR.png">
@@ -606,7 +606,7 @@ Professor: Shivali Dhaka -->
 			<img id="legs_short_thin_strong_female_00_COLOR" 		src="images/character/accessories/legs/legs_short_thin_strong_female_00_COLOR.png">
 			<img id="legs_short_thin_weak_male_00_COLOR" 			src="images/character/accessories/legs/legs_short_thin_weak_male_00_COLOR.png">
 			<img id="legs_short_thin_weak_female_00_COLOR" 		src="images/character/accessories/legs/legs_short_thin_weak_female_00_COLOR.png">
-			
+
 			<img id="legs_tall_large_strong_male_01_COLOR"			src="images/character/accessories/legs/legs_tall_large_strong_male_01_COLOR.png">
 			<img id="legs_tall_large_strong_female_01_COLOR" 		src="images/character/accessories/legs/legs_tall_large_strong_female_01_COLOR.png">
 			<img id="legs_tall_large_weak_male_01_COLOR" 			src="images/character/accessories/legs/legs_tall_large_weak_male_01_COLOR.png">
@@ -679,7 +679,7 @@ Professor: Shivali Dhaka -->
 			<img id="legs_short_thin_strong_female_00" 			src="images/character/accessories/legs/legs_short_thin_strong_female_00.png">
 			<img id="legs_short_thin_weak_male_00" 				src="images/character/accessories/legs/legs_short_thin_weak_male_00.png">
 			<img id="legs_short_thin_weak_female_00" 				src="images/character/accessories/legs/legs_short_thin_weak_female_00.png">
-			
+
 			<img id="legs_tall_large_strong_male_01"				src="images/character/accessories/legs/legs_tall_large_strong_male_01.png">
 			<img id="legs_tall_large_strong_female_01" 				src="images/character/accessories/legs/legs_tall_large_strong_female_01.png">
 			<img id="legs_tall_large_weak_male_01" 					src="images/character/accessories/legs/legs_tall_large_weak_male_01.png">
@@ -716,13 +716,13 @@ Professor: Shivali Dhaka -->
 			<img id="legs_short_thin_strong_female_01" 			src="images/character/accessories/legs/legs_short_thin_strong_female_01.png">
 			<img id="legs_short_thin_weak_male_01" 				src="images/character/accessories/legs/legs_short_thin_weak_male_01.png">
 			<img id="legs_short_thin_weak_female_01" 				src="images/character/accessories/legs/legs_short_thin_weak_female_01.png">
-			
+
 		<!-- shoes -->
 			<!-- color -->
-			
+
 			<!-- detail -->
-			
-			
+
+
 		<!-- torso -->
 			<!-- color -->
 			<img id="torso_tall_large_strong_male_00_COLOR"			src="images/character/accessories/torso/torso_tall_large_strong_male_00_COLOR.png">
@@ -798,7 +798,7 @@ Professor: Shivali Dhaka -->
 			<img id="torso_short_thin_strong_female_00" 			src="images/character/accessories/torso/torso_short_thin_strong_female_00.png">
 			<img id="torso_short_thin_weak_male_00" 				src="images/character/accessories/torso/torso_short_thin_weak_male_00.png">
 			<img id="torso_short_thin_weak_female_00" 			src="images/character/accessories/torso/torso_short_thin_weak_female_00.png">
-		
+
 		<!-- mouth -->
 			<!-- detail -->
 			<img id="mouth_00" 		src="images/character/head/mouth/mouth_00.png">
@@ -806,7 +806,7 @@ Professor: Shivali Dhaka -->
 			<img id="mouth_02" 		src="images/character/head/mouth/mouth_02.png">
 			<img id="mouth_03" 		src="images/character/head/mouth/mouth_03.png">
 			<img id="mouth_04" 		src="images/character/head/mouth/mouth_04.png">
-			
+
 		<!-- nose -->
 			<!-- detail -->
 			<img id="nose_00" 		src="images/character/head/nose/nose_00.png">
@@ -815,7 +815,7 @@ Professor: Shivali Dhaka -->
 			<img id="nose_03" 		src="images/character/head/nose/nose_03.png">
 			<img id="nose_04" 		src="images/character/head/nose/nose_04.png">
 			<img id="nose_05" 		src="images/character/head/nose/nose_05.png">
-			
+
 		<!-- eyes -->
 			<!-- color -->
 			<img id="eyes_00_COLOR" 	src="images/character/head/eyes/eyes_00_COLOR.png">
@@ -827,7 +827,7 @@ Professor: Shivali Dhaka -->
 			<img id="eyes_01" 			src="images/character/head/eyes/eyes_01.png">
 			<img id="eyes_02" 			src="images/character/head/eyes/eyes_02.png">
 			<img id="eyes_03" 			src="images/character/head/eyes/eyes_03.png">
-			
+
 		<!-- hair_bottom -->
 			<!-- color -->
 			<img id="hair_bottom_00_COLOR" 		src="images/character/head/hair_bottom/hair_bottom_00_COLOR.png">
@@ -845,7 +845,7 @@ Professor: Shivali Dhaka -->
 			<img id="hair_bottom_04" 			src="images/character/head/hair_bottom/hair_bottom_04.png">
 			<img id="hair_bottom_05" 			src="images/character/head/hair_bottom/hair_bottom_05.png">
 			<img id="hair_bottom_06" 			src="images/character/head/hair_bottom/hair_bottom_06.png">
-			
+
 		<!-- hair_top -->
 			<!-- color -->
 			<img id="hair_top_00_COLOR" 		src="images/character/head/hair_top/hair_top_00_COLOR.png">
@@ -865,7 +865,7 @@ Professor: Shivali Dhaka -->
 			<img id="hair_top_05" 				src="images/character/head/hair_top/hair_top_05.png">
 			<img id="hair_top_06" 				src="images/character/head/hair_top/hair_top_06.png">
 			<img id="hair_top_07" 				src="images/character/head/hair_top/hair_top_07.png">
-			
+
 		<!-- ears -->
 			<!-- color -->
 			<img id="ears_00_COLOR" 		src="images/character/head/ears/ears_00_COLOR.png">
@@ -879,7 +879,7 @@ Professor: Shivali Dhaka -->
 			<img id="ears_02" 				src="images/character/head/ears/ears_02.png">
 			<img id="ears_03" 				src="images/character/head/ears/ears_03.png">
 			<img id="ears_04" 				src="images/character/head/ears/ears_04.png">
-		
+
 		<!-- horns -->
 			<!-- color -->
 			<img id="horns_00_COLOR" 		src="images/character/head/horns/horns_00_COLOR.png">
@@ -893,5 +893,21 @@ Professor: Shivali Dhaka -->
 			<img id="horns_03" 				src="images/character/head/horns/horns_03.png">
 		</div>
 	</div>
+
+	<!-- author - lakshika  -->
+
+	<button onclick="createCharacter()" >CREATE CHARACTER</button>
+	<div id="name"> </div>
+	<p id="class"> </p>
+	<p id="bg"> </p>
+	<p id="plName"> </p>
+	<p id="level"> </p>
+	<p id="xp"> </p>
+	<p id="strng"> </p>
+	<p id="intel"> </p>
+	<p id="wis"> </p>
+	<p id="charBonus"> </p>
+
+
 </body>
 </html>

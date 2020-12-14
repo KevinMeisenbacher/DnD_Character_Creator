@@ -111,7 +111,7 @@ else if (race.selectedIndex == 'dwarf') {
 
 function createCharacter() {
 	var character = {
-		charName, charClass, background, playerName, faction, 
+		charName, charClass, background, playerName, faction,
 		race, alignment, level, xp, dciNum,
 		strength, dex, constitution, intel, wisdom, charisma,
 		inspiration, profBonus,
@@ -120,7 +120,7 @@ function createCharacter() {
 		deception, history, intimidation, insight, investigation,
 		medicine, nature, perception, performance, persuasion,
 		religion, sleightOfHand, stealth, survival,
-		passiveWisdom, 
+		passiveWisdom,
 		armourClass, initiative, speed, maxHP, currentHP, tempHP, hitDice,
 		successThrows, failThrows, deathSaves,
 		atkNames, atkBonus, atkValues,
@@ -131,10 +131,10 @@ function createCharacter() {
 
 //var charName = document.getElementById('charName').value;
 document.getElementById('name').textContent = "Hey "+ charName +" that is an awesome name you got there !!";
-        
+
 var charClass = document.getElementById('charClass').value;
 document.getElementById('class').textContent = "Hey "+ charClass +" ";
-         
+
 var background = document.getElementById('charBackground').value;
 document.getElementById('bg').textContent = "Hey "+ background +" ";
 
