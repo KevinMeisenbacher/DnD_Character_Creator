@@ -259,3 +259,6 @@ button {
 	font-size: 120%;
 	margin-left: 10px;
 }
+.hidden {
+	display:none
+}
