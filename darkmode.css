@@ -69,7 +69,7 @@
 	border-color: red;
 	width: 60px;
 	height: 45px;
-	border-radius: 60px; 
+	border-radius: 60px;
 	margin-bottom: -200px;
 }
 #statLabel {
@@ -106,7 +106,7 @@
 	flex-direction: column;
 	border-style: solid;
 	border-color: red;
-	border-radius: 10px;	
+	border-radius: 10px;
 	margin: 10px;
 }
 /* Styling for the skill inputs */
@@ -205,7 +205,7 @@ input[type=checkBox] {
 	flex-direction: column;
 	border-style: solid;
 	border-color: red;
-	border-radius: 5px;	
+	border-radius: 5px;
 	margin-left: 10px;
 	height: 65px;
 	width: 300px;
@@ -215,7 +215,7 @@ input[type=checkBox] {
 	flex-direction: column;
 	border-style: solid;
 	border-color: red;
-	border-radius: 5px;	
+	border-radius: 5px;
 	margin-left: 10px;
 	height: 350px;
 	width: 300px;
