@@ -43,7 +43,7 @@ Professor: Shivali Dhaka -->
 				<td><input class="textbox" id="race" required></input></td>
 				<td><input class="textbox" id="alignment"required></input></td>
 				<td><input class="textbox" id="level"required></input></td>
-				<td><input class="textbox" id="xp"required></input></td>
+				<td><input class="textbox" id="experience"required></input></td>
 				<td><input class="textbox" id="dciNum"></input></td>
 			</tr>
 			<tr>
@@ -63,27 +63,27 @@ Professor: Shivali Dhaka -->
 			<div class="attributesList">
 				<div class="attributeBox" id="strength">
 					<p id="statLabel">STRENGTH</p>
-					<input class="attributeInput" id="strengthInput"/>
+					<input class="attributeInput" id="strInput"/>
 				</div>
-				<div class="attributeBox" id="dex">
+				<div class="attributeBox" id="dexterity">
 					<p id="statLabel">DEXTERITY</p>
 					<input class="attributeInput" id="dexInput"/>
 				</div>
 				<div class="attributeBox" id="constitution">
 					<p id="statLabel">CONSTITUTION</p>
-					<input class="attributeInput" id="constInput"/>
+					<input class="attributeInput" id="consInput"/>
 				</div>
-				<div class="attributeBox" id="intel">
+				<div class="attributeBox" id="intelligence">
 					<p id="statLabel">INTELLIGENCE</p>
 					<input class="attributeInput" id="intelInput"/>
 				</div>
 				<div class="attributeBox" id="wisdom">
 					<p id="statLabel">WISDOM</p>
-					<input class="attributeInput" id="wisdomInput"/>
+					<input class="attributeInput" id="wisInput"/>
 				</div>
 				<div class="attributeBox" id="charisma">
 					<p id="statLabel">CHARISMA</p>
-					<input class="attributeInput" id="charismaInput"/>
+					<input class="attributeInput" id="chrInput"/>
 				</div>
 			</div>
 			<div class="stats">
@@ -290,10 +290,10 @@ Professor: Shivali Dhaka -->
 									</td>
 								</tr>
 							</table>
-						</div>
-					</div>
-				</div>
-			</div>
+						</div> <!-- Space out the saving throws -->
+					</div> <!-- Box for saving throws -->
+				</div> <!-- Hit dice and saving throws -->
+			</div> <!-- Armour class-speed down to hit dice-saving throws -->
 			<div class="skillBox">
 				<div class="stats">
 					<div class="columns">
@@ -391,59 +391,70 @@ Professor: Shivali Dhaka -->
 				<input class="littleInput" id="trait30"></input>
 				<input class="littleInput" id="trait31"></input>
 				<p style="text-align: center">FEATURES & TRAITS</p>
-			</div>
-		</div>
+			</div> <!-- End of trait box -->
+		</div> <!-- End of 4th row -->
 	<!-- James Spoor -->
-			<div class="skillBox">
-				<canvas id="characterPortrait" width="200" height="400"></canvas><br>
+		<div class="skillBox">
+			<canvas id="characterPortrait" width="200" height="400"></canvas><br>
 
-				Male <input type="range" id="gender" min="0" max="1" value="0" oninput="updateCharacterPortrait()"> Female<br>
+			Male <input type="range" id="gender" min="0" max="1" value="0" oninput="updateCharacterPortrait()"> Female<br>
 
-				<label for="skinTone">Skin Tone</label>
-				<input type="color" id="skinTone" value="#ffd294" onchange="updateCharacterPortrait()"><br>
+			<label for="skinTone">Skin Tone</label>
+			<input type="color" id="skinTone" value="#ffd294" onchange="updateCharacterPortrait()"><br>
 
-				<label for="height">Height</label>
-				<input type="range" id="height" min="0" max="100" oninput="updateCharacterPortrait()"><br>
+			<label for="height">Height</label>
+			<input type="range" id="height" min="0" max="100" oninput="updateCharacterPortrait()"><br>
 
-				<label for="weight">Weight</label>
-				<input type="range" id="weight" min="0" max="100" oninput="updateCharacterPortrait()"><br>
+			<label for="weight">Weight</label>
+			<input type="range" id="weight" min="0" max="100" oninput="updateCharacterPortrait()"><br>
 
-				<label for="muscular">Muscular</label>
-				<input type="checkbox" id="muscular" onchange="updateCharacterPortrait()"><br>
+			<label for="muscular">Muscular</label>
+			<input type="checkbox" id="muscular" onchange="updateCharacterPortrait()"><br>
 
-				<input type="button" id="face" value="Face" onclick="changeFace()"><br>
+			<input type="button" id="face" value="Face" onclick="changeFace()"><br>
 
-				<input type="button" id="mouth" value="Mouth" onclick="changeMouth()">
-				<input type="button" id="nose" value="Nose" onclick="changeNose()">
-				<input type="button" id="ears" value="Ears" onclick="changeEars()"><br>
+			<input type="button" id="mouth" value="Mouth" onclick="changeMouth()">
+			<input type="button" id="nose" value="Nose" onclick="changeNose()">
+			<input type="button" id="ears" value="Ears" onclick="changeEars()"><br>
 
-				<input type="button" id="eyes" value="Eyes" onclick="changeEyes()">
-				<input type="color" id="eyeColor" value="#00ccff" onchange="updateCharacterPortrait()"><br>
+			<input type="button" id="eyes" value="Eyes" onclick="changeEyes()">
+			<input type="color" id="eyeColor" value="#00ccff" onchange="updateCharacterPortrait()"><br>
 
-				<input type="button" id="hairTop" value="Hair" onclick="changeHairTop()">
-				<input type="button" id="hairBottom" value="Facial Hair" onclick="changeHairBottom()">
-				<input type="color" id="hairColor" value="#6e4102" onchange="updateCharacterPortrait()"><br>
+			<input type="button" id="hairTop" value="Hair" onclick="changeHairTop()">
+			<input type="button" id="hairBottom" value="Facial Hair" onclick="changeHairBottom()">
+			<input type="color" id="hairColor" value="#6e4102" onchange="updateCharacterPortrait()"><br>
 
-				<input type="button" id="horns" value="Horns" onclick="changeHorns()">
-				<input type="color" id="hornsColor" value="#ff0000" onchange="updateCharacterPortrait()"><br>
+			<input type="button" id="horns" value="Horns" onclick="changeHorns()">
+			<input type="color" id="hornsColor" value="#ff0000" onchange="updateCharacterPortrait()"><br>
 
-				<input type="button" id="torso" value="Shirt" onclick="changeTorso()">
-				<input type="button" id="legs" value="Pants" onclick="changeLegs()"><br>
-				
-	<!-- author - lakshika  -->
-
-	<button onclick="createCharacter()" >CREATE CHARACTER</button>
-	<div id="name"> </div>
-	<p id="class"> </p>
-	<p id="bg"> </p>
-	<p id="plName"> </p>
-	<p id="level"> </p>
-	<p id="xp"> </p>
-	<p id="strength"> </p>
-	<p id="intelligence"> </p>
-	<p id="wisdom"> </p>
-	<p id="charisma"> </p>
-	
+			<input type="button" id="torso" value="Shirt" onclick="changeTorso()">
+			<input type="button" id="legs" value="Pants" onclick="changeLegs()"><br>
+			
+			<!-- author - lakshika  -->
+			<button onclick="createCharacter()" >CREATE CHARACTER</button>
+		</div> <!-- End of last row -->
+		<div class="statOutput" id="statOutput">
+			<table>
+				<tr><td>Name: </td><td><p id="name"> </p></td></tr>
+				<tr><td><br/></td></tr>
+				<tr><td>Class: </td><td><p id="class"> </p></td></tr>
+				<tr><td>Background: </td><td><p id="bg"> </p></td></tr>
+				<tr><td>Player: </td><td><p id="plName"> </p></td></tr>
+				<tr><td>Faction: </td><td><p id="faction"> </p></td></tr>
+				<tr><td>Race: </td><td><p id="race"> </p></td></tr>
+				<tr><td>Alignment: </td><td><p id="alignment"> </p></td></tr>
+				<tr><td>Level: </td><td><p id="lv"> </p></td></tr>
+				<tr><td>XP: </td><td><p id="xp"> </p></td></tr>
+				<tr><td><br/></td></tr>
+				<tr><td>Strength: </td><td><p id="str"> </p></td></tr>
+				<tr><td>Dexterity: </td><td><p id="dex"> </p></td></tr>
+				<tr><td>Constitution: </td><td><p id="cons"> </p></td></tr>
+				<tr><td>Intelligence: </td><td><p id="intel"> </p></td></tr>
+				<tr><td>Wisdom: </td><td><p id="wis"> </p></td></tr>
+				<tr><td>Charisma: </td><td><p id="chr"> </p></td></tr>
+			</table>
+		</div><!-- End of stat table -->
+	</div> <!-- End of visible divs -->
 	<!-- images for character portrait - James Spoor -->
 	<div class="hidden">
 		<!-- body -->
@@ -548,17 +559,17 @@ Professor: Shivali Dhaka -->
 			<img id="legs_average_thin_weak_male_00_COLOR" 			src="character/accessories/legs/legs_average_thin_weak_male_00_COLOR.png">
 			<img id="legs_average_thin_weak_female_00_COLOR" 		src="character/accessories/legs/legs_average_thin_weak_female_00_COLOR.png">
 			<img id="legs_short_large_strong_male_00_COLOR" 		src="character/accessories/legs/legs_short_large_strong_male_00_COLOR.png">
-			<img id="legs_short_large_strong_female_00_COLOR" 	src="character/accessories/legs/legs_short_large_strong_female_00_COLOR.png">
-			<img id="legs_short_large_weak_male_00_COLOR" 		src="character/accessories/legs/legs_short_large_weak_male_00_COLOR.png">
+			<img id="legs_short_large_strong_female_00_COLOR" 		src="character/accessories/legs/legs_short_large_strong_female_00_COLOR.png">
+			<img id="legs_short_large_weak_male_00_COLOR" 			src="character/accessories/legs/legs_short_large_weak_male_00_COLOR.png">
 			<img id="legs_short_large_weak_female_00_COLOR" 		src="character/accessories/legs/legs_short_large_weak_female_00_COLOR.png">
 			<img id="legs_short_medium_strong_male_00_COLOR" 		src="character/accessories/legs/legs_short_medium_strong_male_00_COLOR.png">
-			<img id="legs_short_medium_strong_female_00_COLOR" 	src="character/accessories/legs/legs_short_medium_strong_female_00_COLOR.png">
-			<img id="legs_short_medium_weak_male_00_COLOR" 		src="character/accessories/legs/legs_short_medium_weak_male_00_COLOR.png">
+			<img id="legs_short_medium_strong_female_00_COLOR" 		src="character/accessories/legs/legs_short_medium_strong_female_00_COLOR.png">
+			<img id="legs_short_medium_weak_male_00_COLOR" 			src="character/accessories/legs/legs_short_medium_weak_male_00_COLOR.png">
 			<img id="legs_short_medium_weak_female_00_COLOR" 		src="character/accessories/legs/legs_short_medium_weak_female_00_COLOR.png">
-			<img id="legs_short_thin_strong_male_00_COLOR" 		src="character/accessories/legs/legs_short_thin_strong_male_00_COLOR.png">
+			<img id="legs_short_thin_strong_male_00_COLOR" 			src="character/accessories/legs/legs_short_thin_strong_male_00_COLOR.png">
 			<img id="legs_short_thin_strong_female_00_COLOR" 		src="character/accessories/legs/legs_short_thin_strong_female_00_COLOR.png">
 			<img id="legs_short_thin_weak_male_00_COLOR" 			src="character/accessories/legs/legs_short_thin_weak_male_00_COLOR.png">
-			<img id="legs_short_thin_weak_female_00_COLOR" 		src="character/accessories/legs/legs_short_thin_weak_female_00_COLOR.png">
+			<img id="legs_short_thin_weak_female_00_COLOR" 			src="character/accessories/legs/legs_short_thin_weak_female_00_COLOR.png">
 			
 			<img id="legs_tall_large_strong_male_01_COLOR"			src="character/accessories/legs/legs_tall_large_strong_male_01_COLOR.png">
 			<img id="legs_tall_large_strong_female_01_COLOR" 		src="character/accessories/legs/legs_tall_large_strong_female_01_COLOR.png">
@@ -585,17 +596,17 @@ Professor: Shivali Dhaka -->
 			<img id="legs_average_thin_weak_male_01_COLOR" 			src="character/accessories/legs/legs_average_thin_weak_male_01_COLOR.png">
 			<img id="legs_average_thin_weak_female_01_COLOR" 		src="character/accessories/legs/legs_average_thin_weak_female_01_COLOR.png">
 			<img id="legs_short_large_strong_male_01_COLOR" 		src="character/accessories/legs/legs_short_large_strong_male_01_COLOR.png">
-			<img id="legs_short_large_strong_female_01_COLOR" 	src="character/accessories/legs/legs_short_large_strong_female_01_COLOR.png">
-			<img id="legs_short_large_weak_male_01_COLOR" 		src="character/accessories/legs/legs_short_large_weak_male_01_COLOR.png">
+			<img id="legs_short_large_strong_female_01_COLOR" 		src="character/accessories/legs/legs_short_large_strong_female_01_COLOR.png">
+			<img id="legs_short_large_weak_male_01_COLOR" 			src="character/accessories/legs/legs_short_large_weak_male_01_COLOR.png">
 			<img id="legs_short_large_weak_female_01_COLOR" 		src="character/accessories/legs/legs_short_large_weak_female_01_COLOR.png">
 			<img id="legs_short_medium_strong_male_01_COLOR" 		src="character/accessories/legs/legs_short_medium_strong_male_01_COLOR.png">
-			<img id="legs_short_medium_strong_female_01_COLOR" 	src="character/accessories/legs/legs_short_medium_strong_female_01_COLOR.png">
-			<img id="legs_short_medium_weak_male_01_COLOR" 		src="character/accessories/legs/legs_short_medium_weak_male_01_COLOR.png">
+			<img id="legs_short_medium_strong_female_01_COLOR" 		src="character/accessories/legs/legs_short_medium_strong_female_01_COLOR.png">
+			<img id="legs_short_medium_weak_male_01_COLOR" 			src="character/accessories/legs/legs_short_medium_weak_male_01_COLOR.png">
 			<img id="legs_short_medium_weak_female_01_COLOR" 		src="character/accessories/legs/legs_short_medium_weak_female_01_COLOR.png">
-			<img id="legs_short_thin_strong_male_01_COLOR" 		src="character/accessories/legs/legs_short_thin_strong_male_01_COLOR.png">
+			<img id="legs_short_thin_strong_male_01_COLOR" 			src="character/accessories/legs/legs_short_thin_strong_male_01_COLOR.png">
 			<img id="legs_short_thin_strong_female_01_COLOR" 		src="character/accessories/legs/legs_short_thin_strong_female_01_COLOR.png">
 			<img id="legs_short_thin_weak_male_01_COLOR" 			src="character/accessories/legs/legs_short_thin_weak_male_01_COLOR.png">
-			<img id="legs_short_thin_weak_female_01_COLOR" 		src="character/accessories/legs/legs_short_thin_weak_female_01_COLOR.png">
+			<img id="legs_short_thin_weak_female_01_COLOR" 			src="character/accessories/legs/legs_short_thin_weak_female_01_COLOR.png">
 			<!-- detail -->
 			<img id="legs_tall_large_strong_male_00"				src="character/accessories/legs/legs_tall_large_strong_male_00.png">
 			<img id="legs_tall_large_strong_female_00" 				src="character/accessories/legs/legs_tall_large_strong_female_00.png">
@@ -620,17 +631,17 @@ Professor: Shivali Dhaka -->
 			<img id="legs_average_thin_strong_male_00" 				src="character/accessories/legs/legs_average_thin_strong_male_00.png">
 			<img id="legs_average_thin_strong_female_00" 			src="character/accessories/legs/legs_average_thin_strong_female_00.png">
 			<img id="legs_average_thin_weak_male_00" 				src="character/accessories/legs/legs_average_thin_weak_male_00.png">
-			<img id="legs_short_large_strong_male_00" 			src="character/accessories/legs/legs_short_large_strong_male_00.png">
+			<img id="legs_short_large_strong_male_00" 				src="character/accessories/legs/legs_short_large_strong_male_00.png">
 			<img id="legs_short_large_strong_female_00" 			src="character/accessories/legs/legs_short_large_strong_female_00.png">
 			<img id="legs_short_large_weak_male_00" 				src="character/accessories/legs/legs_short_large_weak_male_00.png">
-			<img id="legs_short_large_weak_female_00" 			src="character/accessories/legs/legs_short_large_weak_female_00.png">
-			<img id="legs_short_medium_strong_male_00" 			src="character/accessories/legs/legs_short_medium_strong_male_00.png">
+			<img id="legs_short_large_weak_female_00" 				src="character/accessories/legs/legs_short_large_weak_female_00.png">
+			<img id="legs_short_medium_strong_male_00" 				src="character/accessories/legs/legs_short_medium_strong_male_00.png">
 			<img id="legs_short_medium_strong_female_00" 			src="character/accessories/legs/legs_short_medium_strong_female_00.png">
 			<img id="legs_short_medium_weak_male_00" 				src="character/accessories/legs/legs_short_medium_weak_male_00.png">
-			<img id="legs_short_medium_weak_female_00" 			src="character/accessories/legs/legs_short_medium_weak_female_00.png">
+			<img id="legs_short_medium_weak_female_00" 				src="character/accessories/legs/legs_short_medium_weak_female_00.png">
 			<img id="legs_short_thin_strong_male_00" 				src="character/accessories/legs/legs_short_thin_strong_male_00.png">
-			<img id="legs_short_thin_strong_female_00" 			src="character/accessories/legs/legs_short_thin_strong_female_00.png">
-			<img id="legs_short_thin_weak_male_00" 				src="character/accessories/legs/legs_short_thin_weak_male_00.png">
+			<img id="legs_short_thin_strong_female_00" 				src="character/accessories/legs/legs_short_thin_strong_female_00.png">
+			<img id="legs_short_thin_weak_male_00" 					src="character/accessories/legs/legs_short_thin_weak_male_00.png">
 			<img id="legs_short_thin_weak_female_00" 				src="character/accessories/legs/legs_short_thin_weak_female_00.png">
 			
 			<img id="legs_tall_large_strong_male_01"				src="character/accessories/legs/legs_tall_large_strong_male_01.png">
@@ -657,17 +668,17 @@ Professor: Shivali Dhaka -->
 			<img id="legs_average_thin_strong_female_01" 			src="character/accessories/legs/legs_average_thin_strong_female_01.png">
 			<img id="legs_average_thin_weak_male_01" 				src="character/accessories/legs/legs_average_thin_weak_male_01.png">
 			<img id="legs_average_thin_weak_female_01" 				src="character/accessories/legs/legs_average_thin_weak_female_01.png">
-			<img id="legs_short_large_strong_male_01" 			src="character/accessories/legs/legs_short_large_strong_male_01.png">
+			<img id="legs_short_large_strong_male_01" 				src="character/accessories/legs/legs_short_large_strong_male_01.png">
 			<img id="legs_short_large_strong_female_01" 			src="character/accessories/legs/legs_short_large_strong_female_01.png">
 			<img id="legs_short_large_weak_male_01" 				src="character/accessories/legs/legs_short_large_weak_male_01.png">
-			<img id="legs_short_large_weak_female_01" 			src="character/accessories/legs/legs_short_large_weak_female_01.png">
-			<img id="legs_short_medium_strong_male_01" 			src="character/accessories/legs/legs_short_medium_strong_male_01.png">
+			<img id="legs_short_large_weak_female_01" 				src="character/accessories/legs/legs_short_large_weak_female_01.png">
+			<img id="legs_short_medium_strong_male_01" 				src="character/accessories/legs/legs_short_medium_strong_male_01.png">
 			<img id="legs_short_medium_strong_female_01" 			src="character/accessories/legs/legs_short_medium_strong_female_01.png">
 			<img id="legs_short_medium_weak_male_01" 				src="character/accessories/legs/legs_short_medium_weak_male_01.png">
-			<img id="legs_short_medium_weak_female_01" 			src="character/accessories/legs/legs_short_medium_weak_female_01.png">
+			<img id="legs_short_medium_weak_female_01" 				src="character/accessories/legs/legs_short_medium_weak_female_01.png">
 			<img id="legs_short_thin_strong_male_01" 				src="character/accessories/legs/legs_short_thin_strong_male_01.png">
-			<img id="legs_short_thin_strong_female_01" 			src="character/accessories/legs/legs_short_thin_strong_female_01.png">
-			<img id="legs_short_thin_weak_male_01" 				src="character/accessories/legs/legs_short_thin_weak_male_01.png">
+			<img id="legs_short_thin_strong_female_01" 				src="character/accessories/legs/legs_short_thin_strong_female_01.png">
+			<img id="legs_short_thin_weak_male_01" 					src="character/accessories/legs/legs_short_thin_weak_male_01.png">
 			<img id="legs_short_thin_weak_female_01" 				src="character/accessories/legs/legs_short_thin_weak_female_01.png">
 			
 		<!-- shoes -->
@@ -703,16 +714,16 @@ Professor: Shivali Dhaka -->
 			<img id="torso_average_thin_weak_male_00_COLOR" 		src="character/accessories/torso/torso_average_thin_weak_male_00_COLOR.png">
 			<img id="torso_average_thin_weak_female_00_COLOR" 		src="character/accessories/torso/torso_average_thin_weak_female_00_COLOR.png">
 			<img id="torso_short_large_strong_male_00_COLOR" 		src="character/accessories/torso/torso_short_large_strong_male_00_COLOR.png">
-			<img id="torso_short_large_strong_female_00_COLOR" 	src="character/accessories/torso/torso_short_large_strong_female_00_COLOR.png">
-			<img id="torso_short_large_weak_male_00_COLOR" 		src="character/accessories/torso/torso_short_large_weak_male_00_COLOR.png">
+			<img id="torso_short_large_strong_female_00_COLOR" 		src="character/accessories/torso/torso_short_large_strong_female_00_COLOR.png">
+			<img id="torso_short_large_weak_male_00_COLOR" 			src="character/accessories/torso/torso_short_large_weak_male_00_COLOR.png">
 			<img id="torso_short_large_weak_female_00_COLOR" 		src="character/accessories/torso/torso_short_large_weak_female_00_COLOR.png">
-			<img id="torso_short_medium_strong_male_00_COLOR" 	src="character/accessories/torso/torso_short_medium_strong_male_00_COLOR.png">
+			<img id="torso_short_medium_strong_male_00_COLOR" 		src="character/accessories/torso/torso_short_medium_strong_male_00_COLOR.png">
 			<img id="torso_short_medium_strong_female_00_COLOR" 	src="character/accessories/torso/torso_short_medium_strong_female_00_COLOR.png">
 			<img id="torso_short_medium_weak_male_00_COLOR" 		src="character/accessories/torso/torso_short_medium_weak_male_00_COLOR.png">
-			<img id="torso_short_medium_weak_female_00_COLOR" 	src="character/accessories/torso/torso_short_medium_weak_female_00_COLOR.png">
+			<img id="torso_short_medium_weak_female_00_COLOR" 		src="character/accessories/torso/torso_short_medium_weak_female_00_COLOR.png">
 			<img id="torso_short_thin_strong_male_00_COLOR" 		src="character/accessories/torso/torso_short_thin_strong_male_00_COLOR.png">
-			<img id="torso_short_thin_strong_female_00_COLOR" 	src="character/accessories/torso/torso_short_thin_strong_female_00_COLOR.png">
-			<img id="torso_short_thin_weak_male_00_COLOR" 		src="character/accessories/torso/torso_short_thin_weak_male_00_COLOR.png">
+			<img id="torso_short_thin_strong_female_00_COLOR" 		src="character/accessories/torso/torso_short_thin_strong_female_00_COLOR.png">
+			<img id="torso_short_thin_weak_male_00_COLOR" 			src="character/accessories/torso/torso_short_thin_weak_male_00_COLOR.png">
 			<img id="torso_short_thin_weak_female_00_COLOR" 		src="character/accessories/torso/torso_short_thin_weak_female_00_COLOR.png">
 			<!-- detail -->
 			<img id="torso_tall_large_strong_male_00"				src="character/accessories/torso/torso_tall_large_strong_male_00.png">
@@ -739,18 +750,18 @@ Professor: Shivali Dhaka -->
 			<img id="torso_average_thin_strong_female_00" 			src="character/accessories/torso/torso_average_thin_strong_female_00.png">
 			<img id="torso_average_thin_weak_male_00" 				src="character/accessories/torso/torso_average_thin_weak_male_00.png">
 			<img id="torso_average_thin_weak_female_00" 			src="character/accessories/torso/torso_average_thin_weak_female_00.png">
-			<img id="torso_short_large_strong_male_00" 			src="character/accessories/torso/torso_short_large_strong_male_00.png">
+			<img id="torso_short_large_strong_male_00" 				src="character/accessories/torso/torso_short_large_strong_male_00.png">
 			<img id="torso_short_large_strong_female_00" 			src="character/accessories/torso/torso_short_large_strong_female_00.png">
 			<img id="torso_short_large_weak_male_00" 				src="character/accessories/torso/torso_short_large_weak_male_00.png">
-			<img id="torso_short_large_weak_female_00" 			src="character/accessories/torso/torso_short_large_weak_female_00.png">
+			<img id="torso_short_large_weak_female_00" 				src="character/accessories/torso/torso_short_large_weak_female_00.png">
 			<img id="torso_short_medium_strong_male_00" 			src="character/accessories/torso/torso_short_medium_strong_male_00.png">
-			<img id="torso_short_medium_strong_female_00" 		src="character/accessories/torso/torso_short_medium_strong_female_00.png">
-			<img id="torso_short_medium_weak_male_00" 			src="character/accessories/torso/torso_short_medium_weak_male_00.png">
+			<img id="torso_short_medium_strong_female_00" 			src="character/accessories/torso/torso_short_medium_strong_female_00.png">
+			<img id="torso_short_medium_weak_male_00" 				src="character/accessories/torso/torso_short_medium_weak_male_00.png">
 			<img id="torso_short_medium_weak_female_00" 			src="character/accessories/torso/torso_short_medium_weak_female_00.png">
-			<img id="torso_short_thin_strong_male_00" 			src="character/accessories/torso/torso_short_thin_strong_male_00.png">
+			<img id="torso_short_thin_strong_male_00" 				src="character/accessories/torso/torso_short_thin_strong_male_00.png">
 			<img id="torso_short_thin_strong_female_00" 			src="character/accessories/torso/torso_short_thin_strong_female_00.png">
 			<img id="torso_short_thin_weak_male_00" 				src="character/accessories/torso/torso_short_thin_weak_male_00.png">
-			<img id="torso_short_thin_weak_female_00" 			src="character/accessories/torso/torso_short_thin_weak_female_00.png">
+			<img id="torso_short_thin_weak_female_00" 				src="character/accessories/torso/torso_short_thin_weak_female_00.png">
 		
 		<!-- mouth -->
 			<!-- detail -->

@@ -110,42 +110,50 @@ function createCharacter() {
 		atkNames, atkBonus, atkValues,
 		atkInputs, equipment, traits
 		}*/
+
+	// Validation by Lakshika		
+	//if (charName != null {
+		var charName = document.getElementById('charName').value;
+		document.getElementById('name').innerHTML = charName;
+		        
+		var charClass = document.getElementById('charClass').value;
+		document.getElementById('class').innerHTML = charClass;
+		         
+		var background = document.getElementById('charBackground').value;
+		document.getElementById('bg').innerHTML = background;
 		
-if (charName != null && charClass != null && background != null && playerName != null && 
-	level != null && xp != null && strength != null && intelBonus != null && 
-	intelBonus != null && wisBonus != null) {
-	var charName = document.getElementById('charName').value;
-	document.getElementById('name').innerHTML = "Name: "+ charName;
-	        
-	var charClass = document.getElementById('charClass').value;
-	document.getElementById('class').innerHTML = "Class: "+ charClass +" ";
-	         
-	var background = document.getElementById('charBackground').value;
-	document.getElementById('bg').innerHTML = "Background: "+ background +" ";
-	
-	var playerName = document.getElementById('playerName').value;
-	document.getElementById('plName').innerHTML = "Player: "+ playerName +" ";
-	
-	var level = document.getElementById('level').value;
-	document.getElementById('level').innerHTML = "Level: "+ level +" ";
-	
-	var xp = document.getElementById('xp').value;
-	document.getElementById('xp').innerHTML = "XP: "+ xp +" ";
-	
-	const strength = document.getElementById('strength').value;
-	document.getElementById('strng').innerHTML = "Strength: "+ strength +" ";
-	
-	const intelBonus = document.getElementById('Intelligence').value;
-	document.getElementById('intel').innerHTML = "Intelligence: "+ intelligence +" ";
-	
-	const wisdomBonus = document.getElementById('wisdom').value;
-	document.getElementById('wis').innerHTML = "Wisdom: "+ wisdom +" ";
-	
-	const charBonus = document.getElementById('charisma').value;
-	document.getElementById('charBonus').innerHTML = "Charisma "+ charisma +" ";
-}
-document.getElementById('name').innerHTML = "You're missing some values";
-	 
+		var playerName = document.getElementById('playerName').value;
+		document.getElementById('plName').innerHTML = playerName;
+		
+		var level = document.getElementById('level').value;
+		document.getElementById('lv').innerHTML = level;
+		
+		var experience = document.getElementById('experience').value;
+		document.getElementById('xp').innerHTML = experience;
+		
+		var strength = document.getElementById('strInput').value;
+		document.getElementById('str').innerHTML = strength;
+		
+		var dexterity = document.getElementById('dexInput').value;
+		document.getElementById('dex').innerHTML = dexterity;
+		
+		var constitution = document.getElementById('consInput').value;
+		document.getElementById('cons').innerHTML = constitution;
+		
+		var intelligence = document.getElementById('intelInput').value;
+		document.getElementById('intel').innerHTML = intelligence;
+		
+		var wisdom = document.getElementById('wisInput').value;
+		document.getElementById('wis').innerHTML = wisdom;
+		
+		var charisma = document.getElementById('chrInput').value;
+		document.getElementById('chr').innerHTML = charisma;
+		
+		document.getElementById('statOutput').style.display = 'flex';
+	/*}
+	else if charName == null {
+		document.getElementById('name').innerHTML = "You're missing some values";
+	 }*/
 }
 
 
