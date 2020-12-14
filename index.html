@@ -13,9 +13,54 @@ Professor: Shivali Dhaka -->
 <html>
 <head>
 	<script src="index.js"></script>
+	<script src="jamesSpoor.js"></script>
 	<link rel="stylesheet" href="darkmode.css">
 </head>
 <body>
+  <!-- <div id="characterCreator">
+  	What's your character's name? <input class="littleInput" id="characterName">
+  	Pick a class <select class="littleInput" id="race">
+  		<option value="bard">Bard</option>
+  		<option value="cleric">Cleric</option>
+  		<option value="druid">Druid</option>
+  		<option value="fighter">Fighter</option>
+  		<option value="monk">Monk</option>
+  		<option value="paladin">Paladin</option>
+  		<option value="ranger">Ranger</option>
+  		<option value="rogue">Rogue</option>
+  		<option value="sorcerer">Sorcerer</option>
+  		<option value="warlock">Warlock</option>
+  		<option value="wizard">Wizard</option>
+  		<option value="artificer">Artificer</option>
+  		<option value="blood hunter">Blood Hunter</option>
+  	</select>
+  	Where is your character from? <input class="littleInput" id="background">
+  	And what is YOUR name? <input class="littleInput" id="playerName">
+  	What is your character's race? <select class="littleInput" id="race">
+  		<option value="dragonborn">Dragonborn</option>
+  		<option value="dwarf">Dwarf</option>
+  		<option value="elf">Elf</option>
+  		<option value="gnome">Gnome</option>
+  		<option value="halfElf">Half Elf</option>
+  		<option value="halfling">Halfling</option>
+  		<option value="halfOrc">Half Orc</option>
+  		<option value="human">Human</option>
+  		<option value="tiefling">Tiefling</option>
+  	</select>
+  	What is your moral alignment? <select class="littleInput" id="alignment">
+  		<option value = "lawfulGood">Lawful Good</option>
+  		<option value = "lawfulNeutral">Lawful Neutral</option>
+  		<option value = "lawfulEvil">Lawful Evil</option>
+  		<option value = "neutralGood">Neutral Good</option>
+  		<option value = "trueNeutral">True Neutral</option>
+  		<option value = "neutralEvil">Neutral Evil</option>
+  		<option value = "chaoticGood">Chaotic Good</option>
+  		<option value = "chaoticNeutral">Chaotic Neutral</option>
+  		<option value = "chaoticEvil">Chaotic Evil</option>
+  	</select>
+	<button onclick="createCharacter()">CREATE CHARACTER</button>
+  </div>-->
+  <div id="characterSheet">
 	<!-- Top Fields -->
 	<div class="topFields">
 		<img src="https://www.dicesaloon.com/system/production/dice_saloon/events/main_images/000/000/714/full/DND_%281%29.png?1496485238" 
@@ -391,7 +436,462 @@ Professor: Shivali Dhaka -->
 				<p style="text-align: center">FEATURES & TRAITS</p>
 			</div>
 		</div>
+		
+		<!-- author - lakshika  -->
+
+	<div id="name"> </div>
+	<p id="class"> </p>
+	<p id="bg"> </p>
+	<p id="plName"> </p>
+	<p id="level"> </p>
+	<p id="xp"> </p>
+	<p id="strng"> </p>
+	<p id="intel"> </p>
+	<p id="wis"> </p>
+	<p id="charBonus"> </p>
+	
+		<!-- James Spoor -->
+		<div class="skillBox">
+			<canvas id="characterPortrait" width="200" height="400"></canvas><br>
+			
+			Male <input type="range" id="gender" min="0" max="1" value="0" oninput="updateCharacterPortrait()"> Female<br>
+			
+			<label for="skinTone">Skin Tone</label>
+			<input type="color" id="skinTone" value="#ffd294" onchange="updateCharacterPortrait()"><br>
+			
+			<label for="height">Height</label>
+			<input type="range" id="height" min="0" max="100" oninput="updateCharacterPortrait()"><br>
+			
+			<label for="weight">Weight</label>
+			<input type="range" id="weight" min="0" max="100" oninput="updateCharacterPortrait()"><br>
+			
+			<label for="muscular">Muscular</label>
+			<input type="checkbox" id="muscular" onchange="updateCharacterPortrait()"><br>
+			
+			<input type="button" id="face" value="Face" onclick="changeFace()"><br>
+			<table><tr>
+			<td><input type="button" id="mouth" value="Mouth" onclick="changeMouth()"></td>
+			<td><input type="button" id="nose" value="Nose" onclick="changeNose()"></td>
+			<td><input type="button" id="ears" value="Ears" onclick="changeEars()"></td>
+			</tr></table>
+			
+			<input type="button" id="eyes" value="Eyes" onclick="changeEyes()">
+			<input type="color" id="eyeColor" value="#00ccff" onchange="updateCharacterPortrait()"><br>
+			
+			<input type="button" id="hairTop" value="Hair" onclick="changeHairTop()">
+			<input type="button" id="hairBottom" value="Facial Hair" onclick="changeHairBottom()">
+			<input type="color" id="hairColor" value="#6e4102" onchange="updateCharacterPortrait()"><br>
+			
+			<input type="button" id="horns" value="Horns" onclick="changeHorns()">
+			<input type="color" id="hornsColor" value="#ff0000" onchange="updateCharacterPortrait()"><br>
+			
+			<input type="button" id="torso" value="Shirt" onclick="changeTorso()">
+			<input type="button" id="legs" value="Pants" onclick="changeLegs()"><br>
+			
+		</div>
 	</div>
-	<button onclick="createCharacter()">CREATE CHARACTER</button>
+	<button onclick="createCharacter()">Create Character</button>
+	<!-- images for character portrait - James Spoor -->
+	<div class="hidden">
+		<!-- body -->
+			<!-- color -->
+			<img id="body_tall_large_strong_COLOR"		src="images/character/body/body_tall_large_strong_COLOR.png">
+			<img id="body_tall_large_weak_COLOR" 		src="images/character/body/body_tall_large_weak_COLOR.png">
+			<img id="body_tall_medium_strong_COLOR" 	src="images/character/body/body_tall_medium_strong_COLOR.png">
+			<img id="body_tall_medium_weak_COLOR" 		src="images/character/body/body_tall_medium_weak_COLOR.png">
+			<img id="body_tall_thin_strong_COLOR" 		src="images/character/body/body_tall_thin_strong_COLOR.png">
+			<img id="body_tall_thin_weak_COLOR" 		src="images/character/body/body_tall_thin_weak_COLOR.png">
+			<img id="body_average_large_strong_COLOR" 	src="images/character/body/body_average_large_strong_COLOR.png">
+			<img id="body_average_large_weak_COLOR" 	src="images/character/body/body_average_large_weak_COLOR.png">
+			<img id="body_average_medium_strong_COLOR" 	src="images/character/body/body_average_medium_strong_COLOR.png">
+			<img id="body_average_medium_weak_COLOR" 	src="images/character/body/body_average_medium_weak_COLOR.png">
+			<img id="body_average_thin_strong_COLOR" 	src="images/character/body/body_average_thin_strong_COLOR.png">
+			<img id="body_average_thin_weak_COLOR" 		src="images/character/body/body_average_thin_weak_COLOR.png">
+			<img id="body_short_large_strong_COLOR" 	src="images/character/body/body_short_large_strong_COLOR.png">
+			<img id="body_short_large_weak_COLOR" 		src="images/character/body/body_short_large_weak_COLOR.png">
+			<img id="body_short_medium_strong_COLOR" 	src="images/character/body/body_short_medium_strong_COLOR.png">
+			<img id="body_short_medium_weak_COLOR" 		src="images/character/body/body_short_medium_weak_COLOR.png">
+			<img id="body_short_thin_strong_COLOR" 		src="images/character/body/body_short_thin_strong_COLOR.png">
+			<img id="body_short_thin_weak_COLOR" 		src="images/character/body/body_short_thin_weak_COLOR.png">
+			<!-- detail -->
+			<img id="body_tall_large_strong_male"		src="images/character/body/body_tall_large_strong_male.png">
+			<img id="body_tall_large_strong_female" 	src="images/character/body/body_tall_large_strong_female.png">
+			<img id="body_tall_large_weak_male" 		src="images/character/body/body_tall_large_weak_male.png">
+			<img id="body_tall_large_weak_female" 		src="images/character/body/body_tall_large_weak_female.png">
+			<img id="body_tall_medium_strong_male" 		src="images/character/body/body_tall_medium_strong_male.png">
+			<img id="body_tall_medium_strong_female"	src="images/character/body/body_tall_medium_strong_female.png">
+			<img id="body_tall_medium_weak_male" 		src="images/character/body/body_tall_medium_weak_male.png">
+			<img id="body_tall_medium_weak_female" 		src="images/character/body/body_tall_medium_weak_female.png">
+			<img id="body_tall_thin_strong_male" 		src="images/character/body/body_tall_thin_strong_male.png">
+			<img id="body_tall_thin_strong_female" 		src="images/character/body/body_tall_thin_strong_female.png">
+			<img id="body_tall_thin_weak_male" 			src="images/character/body/body_tall_thin_weak_male.png">
+			<img id="body_tall_thin_weak_female" 		src="images/character/body/body_tall_thin_weak_female.png">
+			<img id="body_average_large_strong_male" 	src="images/character/body/body_average_large_strong_male.png">
+			<img id="body_average_large_strong_female" 	src="images/character/body/body_average_large_strong_female.png">
+			<img id="body_average_large_weak_male" 		src="images/character/body/body_average_large_weak_male.png">
+			<img id="body_average_large_weak_female" 	src="images/character/body/body_average_large_weak_female.png">
+			<img id="body_average_medium_strong_male" 	src="images/character/body/body_average_medium_strong_male.png">
+			<img id="body_average_medium_strong_female" src="images/character/body/body_average_medium_strong_female.png">
+			<img id="body_average_medium_weak_male" 	src="images/character/body/body_average_medium_weak_male.png">
+			<img id="body_average_medium_weak_female" 	src="images/character/body/body_average_medium_weak_female.png">
+			<img id="body_average_thin_strong_male" 	src="images/character/body/body_average_thin_strong_male.png">
+			<img id="body_average_thin_strong_female" 	src="images/character/body/body_average_thin_strong_female.png">
+			<img id="body_average_thin_weak_male" 		src="images/character/body/body_average_thin_weak_male.png">
+			<img id="body_average_thin_weak_female" 	src="images/character/body/body_average_thin_weak_female.png">
+			<img id="body_short_large_strong_male" 		src="images/character/body/body_short_large_strong_male.png">
+			<img id="body_short_large_strong_female" 	src="images/character/body/body_short_large_strong_female.png">
+			<img id="body_short_large_weak_male" 		src="images/character/body/body_short_large_weak_male.png">
+			<img id="body_short_large_weak_female" 		src="images/character/body/body_short_large_weak_female.png">
+			<img id="body_short_medium_strong_male" 	src="images/character/body/body_short_medium_strong_male.png">
+			<img id="body_short_medium_strong_female" 	src="images/character/body/body_short_medium_strong_female.png">
+			<img id="body_short_medium_weak_male" 		src="images/character/body/body_short_medium_weak_male.png">
+			<img id="body_short_medium_weak_female" 	src="images/character/body/body_short_medium_weak_female.png">
+			<img id="body_short_thin_strong_male" 		src="images/character/body/body_short_thin_strong_male.png">
+			<img id="body_short_thin_strong_female" 	src="images/character/body/body_short_thin_strong_female.png">
+			<img id="body_short_thin_weak_male" 		src="images/character/body/body_short_thin_weak_male.png">
+			<img id="body_short_thin_weak_female" 		src="images/character/body/body_short_thin_weak_female.png">
+			
+			
+		<!-- face -->
+			<!-- color -->
+			<img id="face_00_COLOR"		src="images/character/head/face/face_00_COLOR.png">
+			<img id="face_01_COLOR"		src="images/character/head/face/face_01_COLOR.png">
+			<img id="face_02_COLOR"		src="images/character/head/face/face_02_COLOR.png">
+			<img id="face_03_COLOR"		src="images/character/head/face/face_03_COLOR.png">
+			<img id="face_04_COLOR"		src="images/character/head/face/face_04_COLOR.png">
+			<img id="face_05_COLOR"		src="images/character/head/face/face_05_COLOR.png">
+			<!-- detail -->
+			<img id="face_00"			src="images/character/head/face/face_00.png">
+			<img id="face_01"			src="images/character/head/face/face_01.png">
+			<img id="face_02"			src="images/character/head/face/face_02.png">
+			<img id="face_03"			src="images/character/head/face/face_03.png">
+			<img id="face_04"			src="images/character/head/face/face_04.png">
+			<img id="face_05"			src="images/character/head/face/face_05.png">
+				
+		<!-- legs -->
+			<!-- color -->
+			<img id="legs_tall_large_strong_male_00_COLOR"			src="images/character/accessories/legs/legs_tall_large_strong_male_00_COLOR.png">
+			<img id="legs_tall_large_strong_female_00_COLOR" 		src="images/character/accessories/legs/legs_tall_large_strong_female_00_COLOR.png">
+			<img id="legs_tall_large_weak_male_00_COLOR" 			src="images/character/accessories/legs/legs_tall_large_weak_male_00_COLOR.png">
+			<img id="legs_tall_large_weak_female_00_COLOR" 			src="images/character/accessories/legs/legs_tall_large_weak_female_00_COLOR.png">
+			<img id="legs_tall_medium_strong_male_00_COLOR" 		src="images/character/accessories/legs/legs_tall_medium_strong_male_00_COLOR.png">
+			<img id="legs_tall_medium_strong_female_00_COLOR"		src="images/character/accessories/legs/legs_tall_medium_strong_female_00_COLOR.png">
+			<img id="legs_tall_medium_weak_male_00_COLOR" 			src="images/character/accessories/legs/legs_tall_medium_weak_male_00_COLOR.png">
+			<img id="legs_tall_medium_weak_female_00_COLOR" 		src="images/character/accessories/legs/legs_tall_medium_weak_female_00_COLOR.png">
+			<img id="legs_tall_thin_strong_male_00_COLOR" 			src="images/character/accessories/legs/legs_tall_thin_strong_male_00_COLOR.png">
+			<img id="legs_tall_thin_strong_female_00_COLOR" 		src="images/character/accessories/legs/legs_tall_thin_strong_female_00_COLOR.png">
+			<img id="legs_tall_thin_weak_male_00_COLOR" 			src="images/character/accessories/legs/legs_tall_thin_weak_male_00_COLOR.png">
+			<img id="legs_tall_thin_weak_female_00_COLOR" 			src="images/character/accessories/legs/legs_tall_thin_weak_female_00_COLOR.png">
+			<img id="legs_average_large_strong_male_00_COLOR" 		src="images/character/accessories/legs/legs_average_large_strong_male_00_COLOR.png">
+			<img id="legs_average_large_strong_female_00_COLOR" 	src="images/character/accessories/legs/legs_average_large_strong_female_00_COLOR.png">
+			<img id="legs_average_large_weak_male_00_COLOR" 		src="images/character/accessories/legs/legs_average_large_weak_male_00_COLOR.png">
+			<img id="legs_average_large_weak_female_00_COLOR" 		src="images/character/accessories/legs/legs_average_large_weak_female_00_COLOR.png">
+			<img id="legs_average_medium_strong_male_00_COLOR" 		src="images/character/accessories/legs/legs_average_medium_strong_male_00_COLOR.png">
+			<img id="legs_average_medium_strong_female_00_COLOR" 	src="images/character/accessories/legs/legs_average_medium_strong_female_00_COLOR.png">
+			<img id="legs_average_medium_weak_male_00_COLOR" 		src="images/character/accessories/legs/legs_average_medium_weak_male_00_COLOR.png">
+			<img id="legs_average_medium_weak_female_00_COLOR" 		src="images/character/accessories/legs/legs_average_medium_weak_female_00_COLOR.png">
+			<img id="legs_average_thin_strong_male_00_COLOR" 		src="images/character/accessories/legs/legs_average_thin_strong_male_00_COLOR.png">
+			<img id="legs_average_thin_strong_female_00_COLOR" 		src="images/character/accessories/legs/legs_average_thin_strong_female_00_COLOR.png">
+			<img id="legs_average_thin_weak_male_00_COLOR" 			src="images/character/accessories/legs/legs_average_thin_weak_male_00_COLOR.png">
+			<img id="legs_average_thin_weak_female_00_COLOR" 		src="images/character/accessories/legs/legs_average_thin_weak_female_00_COLOR.png">
+			<img id="legs_short_large_strong_male_00_COLOR" 		src="images/character/accessories/legs/legs_short_large_strong_male_00_COLOR.png">
+			<img id="legs_short_large_strong_female_00_COLOR" 	src="images/character/accessories/legs/legs_short_large_strong_female_00_COLOR.png">
+			<img id="legs_short_large_weak_male_00_COLOR" 		src="images/character/accessories/legs/legs_short_large_weak_male_00_COLOR.png">
+			<img id="legs_short_large_weak_female_00_COLOR" 		src="images/character/accessories/legs/legs_short_large_weak_female_00_COLOR.png">
+			<img id="legs_short_medium_strong_male_00_COLOR" 		src="images/character/accessories/legs/legs_short_medium_strong_male_00_COLOR.png">
+			<img id="legs_short_medium_strong_female_00_COLOR" 	src="images/character/accessories/legs/legs_short_medium_strong_female_00_COLOR.png">
+			<img id="legs_short_medium_weak_male_00_COLOR" 		src="images/character/accessories/legs/legs_short_medium_weak_male_00_COLOR.png">
+			<img id="legs_short_medium_weak_female_00_COLOR" 		src="images/character/accessories/legs/legs_short_medium_weak_female_00_COLOR.png">
+			<img id="legs_short_thin_strong_male_00_COLOR" 		src="images/character/accessories/legs/legs_short_thin_strong_male_00_COLOR.png">
+			<img id="legs_short_thin_strong_female_00_COLOR" 		src="images/character/accessories/legs/legs_short_thin_strong_female_00_COLOR.png">
+			<img id="legs_short_thin_weak_male_00_COLOR" 			src="images/character/accessories/legs/legs_short_thin_weak_male_00_COLOR.png">
+			<img id="legs_short_thin_weak_female_00_COLOR" 		src="images/character/accessories/legs/legs_short_thin_weak_female_00_COLOR.png">
+			
+			<img id="legs_tall_large_strong_male_01_COLOR"			src="images/character/accessories/legs/legs_tall_large_strong_male_01_COLOR.png">
+			<img id="legs_tall_large_strong_female_01_COLOR" 		src="images/character/accessories/legs/legs_tall_large_strong_female_01_COLOR.png">
+			<img id="legs_tall_large_weak_male_01_COLOR" 			src="images/character/accessories/legs/legs_tall_large_weak_male_01_COLOR.png">
+			<img id="legs_tall_large_weak_female_01_COLOR" 			src="images/character/accessories/legs/legs_tall_large_weak_female_01_COLOR.png">
+			<img id="legs_tall_medium_strong_male_01_COLOR" 		src="images/character/accessories/legs/legs_tall_medium_strong_male_01_COLOR.png">
+			<img id="legs_tall_medium_strong_female_01_COLOR"		src="images/character/accessories/legs/legs_tall_medium_strong_female_01_COLOR.png">
+			<img id="legs_tall_medium_weak_male_01_COLOR" 			src="images/character/accessories/legs/legs_tall_medium_weak_male_01_COLOR.png">
+			<img id="legs_tall_medium_weak_female_01_COLOR" 		src="images/character/accessories/legs/legs_tall_medium_weak_female_01_COLOR.png">
+			<img id="legs_tall_thin_strong_male_01_COLOR" 			src="images/character/accessories/legs/legs_tall_thin_strong_male_01_COLOR.png">
+			<img id="legs_tall_thin_strong_female_01_COLOR" 		src="images/character/accessories/legs/legs_tall_thin_strong_female_01_COLOR.png">
+			<img id="legs_tall_thin_weak_male_01_COLOR" 			src="images/character/accessories/legs/legs_tall_thin_weak_male_01_COLOR.png">
+			<img id="legs_tall_thin_weak_female_01_COLOR" 			src="images/character/accessories/legs/legs_tall_thin_weak_female_01_COLOR.png">
+			<img id="legs_average_large_strong_male_01_COLOR" 		src="images/character/accessories/legs/legs_average_large_strong_male_01_COLOR.png">
+			<img id="legs_average_large_strong_female_01_COLOR" 	src="images/character/accessories/legs/legs_average_large_strong_female_01_COLOR.png">
+			<img id="legs_average_large_weak_male_01_COLOR" 		src="images/character/accessories/legs/legs_average_large_weak_male_01_COLOR.png">
+			<img id="legs_average_large_weak_female_01_COLOR" 		src="images/character/accessories/legs/legs_average_large_weak_female_01_COLOR.png">
+			<img id="legs_average_medium_strong_male_01_COLOR" 		src="images/character/accessories/legs/legs_average_medium_strong_male_01_COLOR.png">
+			<img id="legs_average_medium_strong_female_01_COLOR" 	src="images/character/accessories/legs/legs_average_medium_strong_female_01_COLOR.png">
+			<img id="legs_average_medium_weak_male_01_COLOR" 		src="images/character/accessories/legs/legs_average_medium_weak_male_01_COLOR.png">
+			<img id="legs_average_medium_weak_female_01_COLOR" 		src="images/character/accessories/legs/legs_average_medium_weak_female_01_COLOR.png">
+			<img id="legs_average_thin_strong_male_01_COLOR" 		src="images/character/accessories/legs/legs_average_thin_strong_male_01_COLOR.png">
+			<img id="legs_average_thin_strong_female_01_COLOR" 		src="images/character/accessories/legs/legs_average_thin_strong_female_01_COLOR.png">
+			<img id="legs_average_thin_weak_male_01_COLOR" 			src="images/character/accessories/legs/legs_average_thin_weak_male_01_COLOR.png">
+			<img id="legs_average_thin_weak_female_01_COLOR" 		src="images/character/accessories/legs/legs_average_thin_weak_female_01_COLOR.png">
+			<img id="legs_short_large_strong_male_01_COLOR" 		src="images/character/accessories/legs/legs_short_large_strong_male_01_COLOR.png">
+			<img id="legs_short_large_strong_female_01_COLOR" 	src="images/character/accessories/legs/legs_short_large_strong_female_01_COLOR.png">
+			<img id="legs_short_large_weak_male_01_COLOR" 		src="images/character/accessories/legs/legs_short_large_weak_male_01_COLOR.png">
+			<img id="legs_short_large_weak_female_01_COLOR" 		src="images/character/accessories/legs/legs_short_large_weak_female_01_COLOR.png">
+			<img id="legs_short_medium_strong_male_01_COLOR" 		src="images/character/accessories/legs/legs_short_medium_strong_male_01_COLOR.png">
+			<img id="legs_short_medium_strong_female_01_COLOR" 	src="images/character/accessories/legs/legs_short_medium_strong_female_01_COLOR.png">
+			<img id="legs_short_medium_weak_male_01_COLOR" 		src="images/character/accessories/legs/legs_short_medium_weak_male_01_COLOR.png">
+			<img id="legs_short_medium_weak_female_01_COLOR" 		src="images/character/accessories/legs/legs_short_medium_weak_female_01_COLOR.png">
+			<img id="legs_short_thin_strong_male_01_COLOR" 		src="images/character/accessories/legs/legs_short_thin_strong_male_01_COLOR.png">
+			<img id="legs_short_thin_strong_female_01_COLOR" 		src="images/character/accessories/legs/legs_short_thin_strong_female_01_COLOR.png">
+			<img id="legs_short_thin_weak_male_01_COLOR" 			src="images/character/accessories/legs/legs_short_thin_weak_male_01_COLOR.png">
+			<img id="legs_short_thin_weak_female_01_COLOR" 		src="images/character/accessories/legs/legs_short_thin_weak_female_01_COLOR.png">
+			<!-- detail -->
+			<img id="legs_tall_large_strong_male_00"				src="images/character/accessories/legs/legs_tall_large_strong_male_00.png">
+			<img id="legs_tall_large_strong_female_00" 				src="images/character/accessories/legs/legs_tall_large_strong_female_00.png">
+			<img id="legs_tall_large_weak_male_00" 					src="images/character/accessories/legs/legs_tall_large_weak_male_00.png">
+			<img id="legs_tall_large_weak_female_00" 				src="images/character/accessories/legs/legs_tall_large_weak_female_00.png">
+			<img id="legs_tall_medium_strong_male_00" 				src="images/character/accessories/legs/legs_tall_medium_strong_male_00.png">
+			<img id="legs_tall_medium_strong_female_00"				src="images/character/accessories/legs/legs_tall_medium_strong_female_00.png">
+			<img id="legs_tall_medium_weak_male_00" 				src="images/character/accessories/legs/legs_tall_medium_weak_male_00.png">
+			<img id="legs_tall_medium_weak_female_00" 				src="images/character/accessories/legs/legs_tall_medium_weak_female_00.png">
+			<img id="legs_tall_thin_strong_male_00" 				src="images/character/accessories/legs/legs_tall_thin_strong_male_00.png">
+			<img id="legs_tall_thin_strong_female_00" 				src="images/character/accessories/legs/legs_tall_thin_strong_female_00.png">
+			<img id="legs_tall_thin_weak_male_00" 					src="images/character/accessories/legs/legs_tall_thin_weak_male_00.png">
+			<img id="legs_tall_thin_weak_female_00" 				src="images/character/accessories/legs/legs_tall_thin_weak_female_00.png">
+			<img id="legs_average_large_strong_male_00" 			src="images/character/accessories/legs/legs_average_large_strong_male_00.png">
+			<img id="legs_average_large_strong_female_00" 			src="images/character/accessories/legs/legs_average_large_strong_female_00.png">
+			<img id="legs_average_large_weak_male_00" 				src="images/character/accessories/legs/legs_average_large_weak_male_00.png">
+			<img id="legs_average_large_weak_female_00" 			src="images/character/accessories/legs/legs_average_large_weak_female_00.png">
+			<img id="legs_average_medium_strong_male_00" 			src="images/character/accessories/legs/legs_average_medium_strong_male_00.png">
+			<img id="legs_average_medium_strong_female_00" 			src="images/character/accessories/legs/legs_average_medium_strong_female_00.png">
+			<img id="legs_average_medium_weak_male_00" 				src="images/character/accessories/legs/legs_average_medium_weak_male_00.png">
+			<img id="legs_average_medium_weak_female_00" 			src="images/character/accessories/legs/legs_average_medium_weak_female_00.png">
+			<img id="legs_average_thin_strong_male_00" 				src="images/character/accessories/legs/legs_average_thin_strong_male_00.png">
+			<img id="legs_average_thin_strong_female_00" 			src="images/character/accessories/legs/legs_average_thin_strong_female_00.png">
+			<img id="legs_average_thin_weak_male_00" 				src="images/character/accessories/legs/legs_average_thin_weak_male_00.png">
+			<img id="legs_short_large_strong_male_00" 			src="images/character/accessories/legs/legs_short_large_strong_male_00.png">
+			<img id="legs_short_large_strong_female_00" 			src="images/character/accessories/legs/legs_short_large_strong_female_00.png">
+			<img id="legs_short_large_weak_male_00" 				src="images/character/accessories/legs/legs_short_large_weak_male_00.png">
+			<img id="legs_short_large_weak_female_00" 			src="images/character/accessories/legs/legs_short_large_weak_female_00.png">
+			<img id="legs_short_medium_strong_male_00" 			src="images/character/accessories/legs/legs_short_medium_strong_male_00.png">
+			<img id="legs_short_medium_strong_female_00" 			src="images/character/accessories/legs/legs_short_medium_strong_female_00.png">
+			<img id="legs_short_medium_weak_male_00" 				src="images/character/accessories/legs/legs_short_medium_weak_male_00.png">
+			<img id="legs_short_medium_weak_female_00" 			src="images/character/accessories/legs/legs_short_medium_weak_female_00.png">
+			<img id="legs_short_thin_strong_male_00" 				src="images/character/accessories/legs/legs_short_thin_strong_male_00.png">
+			<img id="legs_short_thin_strong_female_00" 			src="images/character/accessories/legs/legs_short_thin_strong_female_00.png">
+			<img id="legs_short_thin_weak_male_00" 				src="images/character/accessories/legs/legs_short_thin_weak_male_00.png">
+			<img id="legs_short_thin_weak_female_00" 				src="images/character/accessories/legs/legs_short_thin_weak_female_00.png">
+			
+			<img id="legs_tall_large_strong_male_01"				src="images/character/accessories/legs/legs_tall_large_strong_male_01.png">
+			<img id="legs_tall_large_strong_female_01" 				src="images/character/accessories/legs/legs_tall_large_strong_female_01.png">
+			<img id="legs_tall_large_weak_male_01" 					src="images/character/accessories/legs/legs_tall_large_weak_male_01.png">
+			<img id="legs_tall_large_weak_female_01" 				src="images/character/accessories/legs/legs_tall_large_weak_female_01.png">
+			<img id="legs_tall_medium_strong_male_01" 				src="images/character/accessories/legs/legs_tall_medium_strong_male_01.png">
+			<img id="legs_tall_medium_strong_female_01"				src="images/character/accessories/legs/legs_tall_medium_strong_female_01.png">
+			<img id="legs_tall_medium_weak_male_01" 				src="images/character/accessories/legs/legs_tall_medium_weak_male_01.png">
+			<img id="legs_tall_medium_weak_female_01" 				src="images/character/accessories/legs/legs_tall_medium_weak_female_01.png">
+			<img id="legs_tall_thin_strong_male_01" 				src="images/character/accessories/legs/legs_tall_thin_strong_male_01.png">
+			<img id="legs_tall_thin_strong_female_01" 				src="images/character/accessories/legs/legs_tall_thin_strong_female_01.png">
+			<img id="legs_tall_thin_weak_male_01" 					src="images/character/accessories/legs/legs_tall_thin_weak_male_01.png">
+			<img id="legs_tall_thin_weak_female_01" 				src="images/character/accessories/legs/legs_tall_thin_weak_female_01.png">
+			<img id="legs_average_large_strong_male_01" 			src="images/character/accessories/legs/legs_average_large_strong_male_01.png">
+			<img id="legs_average_large_strong_female_01" 			src="images/character/accessories/legs/legs_average_large_strong_female_01.png">
+			<img id="legs_average_large_weak_male_01" 				src="images/character/accessories/legs/legs_average_large_weak_male_01.png">
+			<img id="legs_average_large_weak_female_01" 			src="images/character/accessories/legs/legs_average_large_weak_female_01.png">
+			<img id="legs_average_medium_strong_male_01" 			src="images/character/accessories/legs/legs_average_medium_strong_male_01.png">
+			<img id="legs_average_medium_strong_female_01" 			src="images/character/accessories/legs/legs_average_medium_strong_female_01.png">
+			<img id="legs_average_medium_weak_male_01" 				src="images/character/accessories/legs/legs_average_medium_weak_male_01.png">
+			<img id="legs_average_medium_weak_female_01" 			src="images/character/accessories/legs/legs_average_medium_weak_female_01.png">
+			<img id="legs_average_thin_strong_male_01" 				src="images/character/accessories/legs/legs_average_thin_strong_male_01.png">
+			<img id="legs_average_thin_strong_female_01" 			src="images/character/accessories/legs/legs_average_thin_strong_female_01.png">
+			<img id="legs_average_thin_weak_male_01" 				src="images/character/accessories/legs/legs_average_thin_weak_male_01.png">
+			<img id="legs_average_thin_weak_female_01" 				src="images/character/accessories/legs/legs_average_thin_weak_female_01.png">
+			<img id="legs_short_large_strong_male_01" 			src="images/character/accessories/legs/legs_short_large_strong_male_01.png">
+			<img id="legs_short_large_strong_female_01" 			src="images/character/accessories/legs/legs_short_large_strong_female_01.png">
+			<img id="legs_short_large_weak_male_01" 				src="images/character/accessories/legs/legs_short_large_weak_male_01.png">
+			<img id="legs_short_large_weak_female_01" 			src="images/character/accessories/legs/legs_short_large_weak_female_01.png">
+			<img id="legs_short_medium_strong_male_01" 			src="images/character/accessories/legs/legs_short_medium_strong_male_01.png">
+			<img id="legs_short_medium_strong_female_01" 			src="images/character/accessories/legs/legs_short_medium_strong_female_01.png">
+			<img id="legs_short_medium_weak_male_01" 				src="images/character/accessories/legs/legs_short_medium_weak_male_01.png">
+			<img id="legs_short_medium_weak_female_01" 			src="images/character/accessories/legs/legs_short_medium_weak_female_01.png">
+			<img id="legs_short_thin_strong_male_01" 				src="images/character/accessories/legs/legs_short_thin_strong_male_01.png">
+			<img id="legs_short_thin_strong_female_01" 			src="images/character/accessories/legs/legs_short_thin_strong_female_01.png">
+			<img id="legs_short_thin_weak_male_01" 				src="images/character/accessories/legs/legs_short_thin_weak_male_01.png">
+			<img id="legs_short_thin_weak_female_01" 				src="images/character/accessories/legs/legs_short_thin_weak_female_01.png">
+			
+		<!-- shoes -->
+			<!-- color -->
+			
+			<!-- detail -->
+			
+			
+		<!-- torso -->
+			<!-- color -->
+			<img id="torso_tall_large_strong_male_00_COLOR"			src="images/character/accessories/torso/torso_tall_large_strong_male_00_COLOR.png">
+			<img id="torso_tall_large_strong_female_00_COLOR" 		src="images/character/accessories/torso/torso_tall_large_strong_female_00_COLOR.png">
+			<img id="torso_tall_large_weak_male_00_COLOR" 			src="images/character/accessories/torso/torso_tall_large_weak_male_00_COLOR.png">
+			<img id="torso_tall_large_weak_female_00_COLOR" 		src="images/character/accessories/torso/torso_tall_large_weak_female_00_COLOR.png">
+			<img id="torso_tall_medium_strong_male_00_COLOR" 		src="images/character/accessories/torso/torso_tall_medium_strong_male_00_COLOR.png">
+			<img id="torso_tall_medium_strong_female_00_COLOR"		src="images/character/accessories/torso/torso_tall_medium_strong_female_00_COLOR.png">
+			<img id="torso_tall_medium_weak_male_00_COLOR" 			src="images/character/accessories/torso/torso_tall_medium_weak_male_00_COLOR.png">
+			<img id="torso_tall_medium_weak_female_00_COLOR" 		src="images/character/accessories/torso/torso_tall_medium_weak_female_00_COLOR.png">
+			<img id="torso_tall_thin_strong_male_00_COLOR" 			src="images/character/accessories/torso/torso_tall_thin_strong_male_00_COLOR.png">
+			<img id="torso_tall_thin_strong_female_00_COLOR" 		src="images/character/accessories/torso/torso_tall_thin_strong_female_00_COLOR.png">
+			<img id="torso_tall_thin_weak_male_00_COLOR" 			src="images/character/accessories/torso/torso_tall_thin_weak_male_00_COLOR.png">
+			<img id="torso_tall_thin_weak_female_00_COLOR" 			src="images/character/accessories/torso/torso_tall_thin_weak_female_00_COLOR.png">
+			<img id="torso_average_large_strong_male_00_COLOR" 		src="images/character/accessories/torso/torso_average_large_strong_male_00_COLOR.png">
+			<img id="torso_average_large_strong_female_00_COLOR" 	src="images/character/accessories/torso/torso_average_large_strong_female_00_COLOR.png">
+			<img id="torso_average_large_weak_male_00_COLOR" 		src="images/character/accessories/torso/torso_average_large_weak_male_00_COLOR.png">
+			<img id="torso_average_large_weak_female_00_COLOR" 		src="images/character/accessories/torso/torso_average_large_weak_female_00_COLOR.png">
+			<img id="torso_average_medium_strong_male_00_COLOR" 	src="images/character/accessories/torso/torso_average_medium_strong_male_00_COLOR.png">
+			<img id="torso_average_medium_strong_female_00_COLOR" 	src="images/character/accessories/torso/torso_average_medium_strong_female_00_COLOR.png">
+			<img id="torso_average_medium_weak_male_00_COLOR" 		src="images/character/accessories/torso/torso_average_medium_weak_male_00_COLOR.png">
+			<img id="torso_average_medium_weak_female_00_COLOR" 	src="images/character/accessories/torso/torso_average_medium_weak_female_00_COLOR.png">
+			<img id="torso_average_thin_strong_male_00_COLOR" 		src="images/character/accessories/torso/torso_average_thin_strong_male_00_COLOR.png">
+			<img id="torso_average_thin_strong_female_00_COLOR" 	src="images/character/accessories/torso/torso_average_thin_strong_female_00_COLOR.png">
+			<img id="torso_average_thin_weak_male_00_COLOR" 		src="images/character/accessories/torso/torso_average_thin_weak_male_00_COLOR.png">
+			<img id="torso_average_thin_weak_female_00_COLOR" 		src="images/character/accessories/torso/torso_average_thin_weak_female_00_COLOR.png">
+			<img id="torso_short_large_strong_male_00_COLOR" 		src="images/character/accessories/torso/torso_short_large_strong_male_00_COLOR.png">
+			<img id="torso_short_large_strong_female_00_COLOR" 	src="images/character/accessories/torso/torso_short_large_strong_female_00_COLOR.png">
+			<img id="torso_short_large_weak_male_00_COLOR" 		src="images/character/accessories/torso/torso_short_large_weak_male_00_COLOR.png">
+			<img id="torso_short_large_weak_female_00_COLOR" 		src="images/character/accessories/torso/torso_short_large_weak_female_00_COLOR.png">
+			<img id="torso_short_medium_strong_male_00_COLOR" 	src="images/character/accessories/torso/torso_short_medium_strong_male_00_COLOR.png">
+			<img id="torso_short_medium_strong_female_00_COLOR" 	src="images/character/accessories/torso/torso_short_medium_strong_female_00_COLOR.png">
+			<img id="torso_short_medium_weak_male_00_COLOR" 		src="images/character/accessories/torso/torso_short_medium_weak_male_00_COLOR.png">
+			<img id="torso_short_medium_weak_female_00_COLOR" 	src="images/character/accessories/torso/torso_short_medium_weak_female_00_COLOR.png">
+			<img id="torso_short_thin_strong_male_00_COLOR" 		src="images/character/accessories/torso/torso_short_thin_strong_male_00_COLOR.png">
+			<img id="torso_short_thin_strong_female_00_COLOR" 	src="images/character/accessories/torso/torso_short_thin_strong_female_00_COLOR.png">
+			<img id="torso_short_thin_weak_male_00_COLOR" 		src="images/character/accessories/torso/torso_short_thin_weak_male_00_COLOR.png">
+			<img id="torso_short_thin_weak_female_00_COLOR" 		src="images/character/accessories/torso/torso_short_thin_weak_female_00_COLOR.png">
+			<!-- detail -->
+			<img id="torso_tall_large_strong_male_00"				src="images/character/accessories/torso/torso_tall_large_strong_male_00.png">
+			<img id="torso_tall_large_strong_female_00" 			src="images/character/accessories/torso/torso_tall_large_strong_female_00.png">
+			<img id="torso_tall_large_weak_male_00" 				src="images/character/accessories/torso/torso_tall_large_weak_male_00.png">
+			<img id="torso_tall_large_weak_female_00" 				src="images/character/accessories/torso/torso_tall_large_weak_female_00.png">
+			<img id="torso_tall_medium_strong_male_00" 				src="images/character/accessories/torso/torso_tall_medium_strong_male_00.png">
+			<img id="torso_tall_medium_strong_female_00"			src="images/character/accessories/torso/torso_tall_medium_strong_female_00.png">
+			<img id="torso_tall_medium_weak_male_00" 				src="images/character/accessories/torso/torso_tall_medium_weak_male_00.png">
+			<img id="torso_tall_medium_weak_female_00" 				src="images/character/accessories/torso/torso_tall_medium_weak_female_00.png">
+			<img id="torso_tall_thin_strong_male_00" 				src="images/character/accessories/torso/torso_tall_thin_strong_male_00.png">
+			<img id="torso_tall_thin_strong_female_00" 				src="images/character/accessories/torso/torso_tall_thin_strong_female_00.png">
+			<img id="torso_tall_thin_weak_male_00" 					src="images/character/accessories/torso/torso_tall_thin_weak_male_00.png">
+			<img id="torso_tall_thin_weak_female_00" 				src="images/character/accessories/torso/torso_tall_thin_weak_female_00.png">
+			<img id="torso_average_large_strong_male_00" 			src="images/character/accessories/torso/torso_average_large_strong_male_00.png">
+			<img id="torso_average_large_strong_female_00" 			src="images/character/accessories/torso/torso_average_large_strong_female_00.png">
+			<img id="torso_average_large_weak_male_00" 				src="images/character/accessories/torso/torso_average_large_weak_male_00.png">
+			<img id="torso_average_large_weak_female_00" 			src="images/character/accessories/torso/torso_average_large_weak_female_00.png">
+			<img id="torso_average_medium_strong_male_00" 			src="images/character/accessories/torso/torso_average_medium_strong_male_00.png">
+			<img id="torso_average_medium_strong_female_00" 		src="images/character/accessories/torso/torso_average_medium_strong_female_00.png">
+			<img id="torso_average_medium_weak_male_00" 			src="images/character/accessories/torso/torso_average_medium_weak_male_00.png">
+			<img id="torso_average_medium_weak_female_00" 			src="images/character/accessories/torso/torso_average_medium_weak_female_00.png">
+			<img id="torso_average_thin_strong_male_00" 			src="images/character/accessories/torso/torso_average_thin_strong_male_00.png">
+			<img id="torso_average_thin_strong_female_00" 			src="images/character/accessories/torso/torso_average_thin_strong_female_00.png">
+			<img id="torso_average_thin_weak_male_00" 				src="images/character/accessories/torso/torso_average_thin_weak_male_00.png">
+			<img id="torso_average_thin_weak_female_00" 			src="images/character/accessories/torso/torso_average_thin_weak_female_00.png">
+			<img id="torso_short_large_strong_male_00" 			src="images/character/accessories/torso/torso_short_large_strong_male_00.png">
+			<img id="torso_short_large_strong_female_00" 			src="images/character/accessories/torso/torso_short_large_strong_female_00.png">
+			<img id="torso_short_large_weak_male_00" 				src="images/character/accessories/torso/torso_short_large_weak_male_00.png">
+			<img id="torso_short_large_weak_female_00" 			src="images/character/accessories/torso/torso_short_large_weak_female_00.png">
+			<img id="torso_short_medium_strong_male_00" 			src="images/character/accessories/torso/torso_short_medium_strong_male_00.png">
+			<img id="torso_short_medium_strong_female_00" 		src="images/character/accessories/torso/torso_short_medium_strong_female_00.png">
+			<img id="torso_short_medium_weak_male_00" 			src="images/character/accessories/torso/torso_short_medium_weak_male_00.png">
+			<img id="torso_short_medium_weak_female_00" 			src="images/character/accessories/torso/torso_short_medium_weak_female_00.png">
+			<img id="torso_short_thin_strong_male_00" 			src="images/character/accessories/torso/torso_short_thin_strong_male_00.png">
+			<img id="torso_short_thin_strong_female_00" 			src="images/character/accessories/torso/torso_short_thin_strong_female_00.png">
+			<img id="torso_short_thin_weak_male_00" 				src="images/character/accessories/torso/torso_short_thin_weak_male_00.png">
+			<img id="torso_short_thin_weak_female_00" 			src="images/character/accessories/torso/torso_short_thin_weak_female_00.png">
+		
+		<!-- mouth -->
+			<!-- detail -->
+			<img id="mouth_00" 		src="images/character/head/mouth/mouth_00.png">
+			<img id="mouth_01" 		src="images/character/head/mouth/mouth_01.png">
+			<img id="mouth_02" 		src="images/character/head/mouth/mouth_02.png">
+			<img id="mouth_03" 		src="images/character/head/mouth/mouth_03.png">
+			<img id="mouth_04" 		src="images/character/head/mouth/mouth_04.png">
+			
+		<!-- nose -->
+			<!-- detail -->
+			<img id="nose_00" 		src="images/character/head/nose/nose_00.png">
+			<img id="nose_01" 		src="images/character/head/nose/nose_01.png">
+			<img id="nose_02" 		src="images/character/head/nose/nose_02.png">
+			<img id="nose_03" 		src="images/character/head/nose/nose_03.png">
+			<img id="nose_04" 		src="images/character/head/nose/nose_04.png">
+			<img id="nose_05" 		src="images/character/head/nose/nose_05.png">
+			
+		<!-- eyes -->
+			<!-- color -->
+			<img id="eyes_00_COLOR" 	src="images/character/head/eyes/eyes_00_COLOR.png">
+			<img id="eyes_01_COLOR" 	src="images/character/head/eyes/eyes_01_COLOR.png">
+			<img id="eyes_02_COLOR" 	src="images/character/head/eyes/eyes_02_COLOR.png">
+			<img id="eyes_03_COLOR" 	src="images/character/head/eyes/eyes_03_COLOR.png">
+			<!-- detail -->
+			<img id="eyes_00" 			src="images/character/head/eyes/eyes_00.png">
+			<img id="eyes_01" 			src="images/character/head/eyes/eyes_01.png">
+			<img id="eyes_02" 			src="images/character/head/eyes/eyes_02.png">
+			<img id="eyes_03" 			src="images/character/head/eyes/eyes_03.png">
+			
+		<!-- hair_bottom -->
+			<!-- color -->
+			<img id="hair_bottom_00_COLOR" 		src="images/character/head/hair_bottom/hair_bottom_00_COLOR.png">
+			<img id="hair_bottom_01_COLOR" 		src="images/character/head/hair_bottom/hair_bottom_01_COLOR.png">
+			<img id="hair_bottom_02_COLOR" 		src="images/character/head/hair_bottom/hair_bottom_02_COLOR.png">
+			<img id="hair_bottom_03_COLOR" 		src="images/character/head/hair_bottom/hair_bottom_03_COLOR.png">
+			<img id="hair_bottom_04_COLOR" 		src="images/character/head/hair_bottom/hair_bottom_04_COLOR.png">
+			<img id="hair_bottom_05_COLOR" 		src="images/character/head/hair_bottom/hair_bottom_05_COLOR.png">
+			<img id="hair_bottom_06_COLOR" 		src="images/character/head/hair_bottom/hair_bottom_06_COLOR.png">
+			<!-- detail -->
+			<img id="hair_bottom_00" 			src="images/character/head/hair_bottom/hair_bottom_00.png">
+			<img id="hair_bottom_01" 			src="images/character/head/hair_bottom/hair_bottom_01.png">
+			<img id="hair_bottom_02" 			src="images/character/head/hair_bottom/hair_bottom_02.png">
+			<img id="hair_bottom_03" 			src="images/character/head/hair_bottom/hair_bottom_03.png">
+			<img id="hair_bottom_04" 			src="images/character/head/hair_bottom/hair_bottom_04.png">
+			<img id="hair_bottom_05" 			src="images/character/head/hair_bottom/hair_bottom_05.png">
+			<img id="hair_bottom_06" 			src="images/character/head/hair_bottom/hair_bottom_06.png">
+			
+		<!-- hair_top -->
+			<!-- color -->
+			<img id="hair_top_00_COLOR" 		src="images/character/head/hair_top/hair_top_00_COLOR.png">
+			<img id="hair_top_01_COLOR" 		src="images/character/head/hair_top/hair_top_01_COLOR.png">
+			<img id="hair_top_02_COLOR" 		src="images/character/head/hair_top/hair_top_02_COLOR.png">
+			<img id="hair_top_03_COLOR" 		src="images/character/head/hair_top/hair_top_03_COLOR.png">
+			<img id="hair_top_04_COLOR" 		src="images/character/head/hair_top/hair_top_04_COLOR.png">
+			<img id="hair_top_05_COLOR" 		src="images/character/head/hair_top/hair_top_05_COLOR.png">
+			<img id="hair_top_06_COLOR" 		src="images/character/head/hair_top/hair_top_06_COLOR.png">
+			<img id="hair_top_07_COLOR" 		src="images/character/head/hair_top/hair_top_07_COLOR.png">
+			<!-- detail -->
+			<img id="hair_top_00" 				src="images/character/head/hair_top/hair_top_00.png">
+			<img id="hair_top_01" 				src="images/character/head/hair_top/hair_top_01.png">
+			<img id="hair_top_02" 				src="images/character/head/hair_top/hair_top_02.png">
+			<img id="hair_top_03" 				src="images/character/head/hair_top/hair_top_03.png">
+			<img id="hair_top_04" 				src="images/character/head/hair_top/hair_top_04.png">
+			<img id="hair_top_05" 				src="images/character/head/hair_top/hair_top_05.png">
+			<img id="hair_top_06" 				src="images/character/head/hair_top/hair_top_06.png">
+			<img id="hair_top_07" 				src="images/character/head/hair_top/hair_top_07.png">
+			
+		<!-- ears -->
+			<!-- color -->
+			<img id="ears_00_COLOR" 		src="images/character/head/ears/ears_00_COLOR.png">
+			<img id="ears_01_COLOR" 		src="images/character/head/ears/ears_01_COLOR.png">
+			<img id="ears_02_COLOR" 		src="images/character/head/ears/ears_02_COLOR.png">
+			<img id="ears_03_COLOR" 		src="images/character/head/ears/ears_03_COLOR.png">
+			<img id="ears_04_COLOR" 		src="images/character/head/ears/ears_04_COLOR.png">
+			<!-- detail -->
+			<img id="ears_00" 				src="images/character/head/ears/ears_00.png">
+			<img id="ears_01" 				src="images/character/head/ears/ears_01.png">
+			<img id="ears_02" 				src="images/character/head/ears/ears_02.png">
+			<img id="ears_03" 				src="images/character/head/ears/ears_03.png">
+			<img id="ears_04" 				src="images/character/head/ears/ears_04.png">
+		
+		<!-- horns -->
+			<!-- color -->
+			<img id="horns_00_COLOR" 		src="images/character/head/horns/horns_00_COLOR.png">
+			<img id="horns_01_COLOR" 		src="images/character/head/horns/horns_01_COLOR.png">
+			<img id="horns_02_COLOR" 		src="images/character/head/horns/horns_02_COLOR.png">
+			<img id="horns_03_COLOR" 		src="images/character/head/horns/horns_03_COLOR.png">
+			<!-- detail -->
+			<img id="horns_00" 				src="images/character/head/horns/horns_00.png">
+			<img id="horns_01" 				src="images/character/head/horns/horns_01.png">
+			<img id="horns_02" 				src="images/character/head/horns/horns_02.png">
+			<img id="horns_03" 				src="images/character/head/horns/horns_03.png">
+		</div>
+	</div>
 </body>
 </html>

@@ -259,3 +259,12 @@ button {
 	font-size: 120%;
 	margin-left: 10px;
 }
+
+/* Hide the character sheet until character is created */
+.characterSheet {
+	display: hidden;
+}
+/* Class by James Spoor - Hides the unselected character bodies*/
+.hidden {
+	display:none
+}
