@@ -18,20 +18,53 @@ Professor: Shivali Dhaka -->
 	
 </head>
 <body>
+	<div class="form" id="form">
+		<table>
+			<tr><td>What is your character's name?</td>
+			<td><input type="text" class="textbox" id="charName" required/></td>
+			<td><p id="nameError" style="color: red"/></td>
+			</tr><tr>
+			<td>Pick a class</td>
+			<td><input class="textbox" id="charClass" required/></td>
+			<td><p id="classError" style="color: red"/></td>
+			</tr><tr>
+			<td>Where is your character from?</td>
+			<td><input class="textbox" id="charBackground" required/></td>
+			<td><p id="bgError" style="color: red"/></td>
+			</tr><tr>
+			<td>Who are you?</td>
+			<td><input class="textbox" id="playerName" required/></td>
+			<td><p id="plNameError" style="color: red"/></td>
+			</tr><tr>
+			<td>What faction is your character in?</td>
+			<td><input class="textbox" id="charFaction"/></td>
+			<td><p id="factionError" style="color: red"/></td>
+			</tr><tr>
+			<td>What is your character's race?</td>
+			<td><input class="textbox" id="charRace" required/></td>
+			<td><p id="raceError" style="color: red"/></td>
+			</tr><tr>
+			<td>What is your character's alignment?</td>
+			<td><input class="textbox" id="charAlign"required/></td>
+			<td><p id="alignError" style="color: red"/></td>
+			</tr><tr>
+			<td/><td><button onclick="createCharacter()" >CREATE CHARACTER</button></td>
+		</tr></table>
+	</div>
 	<!-- Top Fields -->
-	<div class="topFields">
+	<div class="topFields" id="topFields">
 		<img src="https://www.dicesaloon.com/system/production/dice_saloon/events/main_images/000/000/714/full/DND_%281%29.png?1496485238" 
 		class="logo">
 		<table>
-			<tr><td><input type="text" class="namebox" id="charName" required/></td></tr>
+			<tr><td><div class="namebox" id="name"></div></td></tr>
 			<tr><td>Character Name</td> 
 		</table>
-		<table class="topFields">
+		<table>
 			<tr>
-				<td><input class="textbox" id="charClass" required/></td>
-				<td><input class="textbox" id="charBackground" required/></td>
-				<td><input class="textbox" id="playerName" required/></td>
-				<td><input class="textbox" id="faction" required/></td>
+				<td><div class="textbox" id="class" required></div></td>
+				<td><div class="textbox" id="bg" required></div></td>
+				<td><div class="textbox" id="plName" required></div></td>
+				<td><div class="textbox" id="faction" required></div></td>
 			</tr>
 			<tr>
 				<td>Class</td>
@@ -40,11 +73,11 @@ Professor: Shivali Dhaka -->
 				<td>Faction</td>
 			</tr>
 			<tr>
-				<td><input class="textbox" id="race" required></input></td>
-				<td><input class="textbox" id="alignment"required></input></td>
-				<td><input class="textbox" id="level"required></input></td>
-				<td><input class="textbox" id="experience"required></input></td>
-				<td><input class="textbox" id="dciNum"></input></td>
+				<td><div class="textbox" id="race" required></div></td>
+				<td><div class="textbox" id="alignment" required></div></td>
+				<td><input class="textbox" id="level"/></td>
+				<td><input class="textbox" id="experience"/></td>
+				<td><input class="textbox" id="dciNum"/></td>
 			</tr>
 			<tr>
 				<td>Race</td>
@@ -55,10 +88,10 @@ Professor: Shivali Dhaka -->
 			</tr>
 		</table>
 	</div>
-	<div class="columns">
+	<div class="columns" id="sheet">
 		<!-- Character Stats -->
 		<div class="stack">
-			<div class="columns">
+			<div class="columns" id="col1">
 			<!--  Base Attributes -->
 			<div class="attributesList">
 				<div class="attributeBox" id="strength">
@@ -329,6 +362,10 @@ Professor: Shivali Dhaka -->
 					<input class="littleInput" id=atkInput10></input>
 					<input class="littleInput" id=atkInput11></input>
 					<input class="littleInput" id=atkInput12></input>
+					<input class="littleInput" id=atkInput13></input>
+					<input class="littleInput" id=atkInput14></input>
+					<input class="littleInput" id=atkInput15></input>
+					<input class="littleInput" id=atkInput16></input>
 					<p style="text-align: center">ATTACKS & SPELLCASTING</p>
 				</div>
 			</div>
@@ -352,8 +389,7 @@ Professor: Shivali Dhaka -->
 		</div>
 		<!--  Boxes for traits -->
 		<div class="stats">
-		<!-- Leaving these 4 lines for someone else to set up nicely
-			 Replace this comment with a credit to yourself when done -->
+		<!-- Leaving these 4 text areas for when development continues personally -->
 			<p class="traitText">PERSONALITY TRAITS</p><textarea class="traitBox"></textarea>
 			<p class="traitText">IDEALS</p><textarea class="traitBox"></textarea>
 			<p class="traitText">BONDS</p><textarea class="traitBox"></textarea>
@@ -430,8 +466,13 @@ Professor: Shivali Dhaka -->
 			<input type="button" id="torso" value="Shirt" onclick="changeTorso()">
 			<input type="button" id="legs" value="Pants" onclick="changeLegs()"><br>
 			
+			<!-- Character loader and new character creator - Kevin Meisenbacher -->
+			<select class="littleInput" id="selector">
+				<option>Choose a character</option>
+			</select>
+			<button id="newCharacter" onclick="newCharacter()">NEW CHARACTER</button>
+			
 			<!-- author - lakshika  -->
-			<button onclick="createCharacter()" >CREATE CHARACTER</button>
 		</div> <!-- End of last row -->
 		<div class="statOutput" id="statOutput">
 			<table>

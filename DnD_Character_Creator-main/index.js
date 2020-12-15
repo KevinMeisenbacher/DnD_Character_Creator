@@ -1,59 +1,7 @@
 /* Author: Kevin Meisenbacher */
 // Base Backgrounds
 
-/*const charName = document.getElementById('charName');
-
-
-const charClass = document.getElementById('charClass');
-const background = document.getElementById('charBackground');
-const playerName = document.getElementById('playerName');
-const faction = document.getElementById('faction');
-const race = document.getElementById('race');
-const alignment = document.getElementById('alignment');
-const level = document.getElementById('level');
-const xp = document.getElementById('xp');
-const dciNum = document.getElementById('dciNum');
-
-// Base Stats
-const strength = document.getElementById('strength');
-const dex = document.getElementById('dex');
-const constitution = document.getElementById('constitution');
-const intel = document.getElementById('intel');
-const wisdom = document.getElementById('wisdom');
-const charisma = document.getElementById('charisma');
-
-// Bonuses
-const inspiration = document.getElementById('inspiration');
-const profBonus = document.getElementById('profBonus');
-
-const strBonus = document.getElementById('strBonus');
-const dexBonus = document.getElementById('dexBonus');
-const constBonus = document.getElementById('constBonus');
-const intelBonus = document.getElementById('intelBonus');
-const wisdomBonus = document.getElementById('wisdomBonus');
-const charBonus = document.getElementById('charBonus');
-
-// Skills
-const acrobatics = document.getElementById('acrobatics');
-const animalHandling = document.getElementById('animalHandling');
-const arcana = document.getElementById('arcana');
-const athletics = document.getElementById('athletics');
-const deception = document.getElementById('deception');
-const history = document.getElementById('history');
-const intimidation = document.getElementById('intimidation');
-const insight = document.getElementById('insight');
-const investigation = document.getElementById('investigation');
-const medicine = document.getElementById('medicine');
-const nature = document.getElementById('nature');
-const perception = document.getElementById('perception');
-const performance = document.getElementById('performance');
-const persuasion = document.getElementById('persuasion');
-const religion = document.getElementById('religion');
-const sleightOfHand = document.getElementById('sleightOfHand');
-const stealth = document.getElementById('stealth');
-const survival = document.getElementById('survival');
-
-const passiveWisdom = document.getElementById('passiveWisdom');
+/* Commented out code is for future updates
 
 // Other proficiencies & languages
 for (var i=1; i<11; i++) const miscProfs = document.getElementById('miscProf'[i]);
@@ -94,68 +42,125 @@ for (var i=1; i<13; i++) const equipment = document.getElementById('item'[i]);
 for (var i=1; i<31; i++) const traits = document.getElementById('trait'[i]);*/
 
 function createCharacter() {
-        /*var character = new character {
-		charName, charClass, background, playerName, faction, 
-		race, alignment, level, xp, dciNum,
-		strength, dex, constitution, intel, wisdom, charisma,
-		inspiration, profBonus,
-		strBonus, dexBonus, constBonus, intelBonus, wisdomBonus, charBonus,
-		acrobatics, animalHandling, arcana, athletics,
-		deception, history, intimidation, insight, investigation,
-		medicine, nature, perception, performance, persuasion,
-		religion, sleightOfHand, stealth, survival,
-		passiveWisdom, misvProf,
-		armourClass, initiative, speed, maxHP, currentHP, tempHP, hitDice,
-		successThrows, failThrows, deathSaves,
-		atkNames, atkBonus, atkValues,
-		atkInputs, equipment, traits
-		}*/
-
 	// Validation by Lakshika		
-	//if (charName != null {
-		var charName = document.getElementById('charName').value;
+	var nameError = document.getElementById('nameError');
+	var charName = document.getElementById('charName').value;
+	if (charName == '') 
+		document.getElementById('nameError').innerHTML = 'A character needs a name';
+	else {
+		document.getElementById('nameError').innerHTML = '';
 		document.getElementById('name').innerHTML = charName;
-		        
-		var charClass = document.getElementById('charClass').value;
+	}
+
+	var classError = document.getElementById('classError');
+	var charClass = document.getElementById('charClass').value;
+	if (charClass == '') 
+		document.getElementById('classError').innerHTML = 'Everyone has a class';
+	else {
+		document.getElementById('classError').innerHTML = '';
 		document.getElementById('class').innerHTML = charClass;
-		         
-		var background = document.getElementById('charBackground').value;
-		document.getElementById('bg').innerHTML = background;
-		
-		var playerName = document.getElementById('playerName').value;
+	}
+
+	var bgError = document.getElementById('bgError');
+	var charBG = document.getElementById('charBackground').value;
+	if (charBG == '') 
+		document.getElementById('bgError').innerHTML = 'Everyone comes from somewhere';
+	else {
+		document.getElementById('bgError').innerHTML = '';
+		document.getElementById('bg').innerHTML = charBG;
+	}
+
+	var plNameError = document.getElementById('plNameError');
+	var playerName = document.getElementById('playerName').value;
+	if (playerName == '') 
+		document.getElementById('plNameError').innerHTML = 'Everyone comes from somewhere';
+	else {
+		document.getElementById('plNameError').innerHTML = '';
 		document.getElementById('plName').innerHTML = playerName;
+	}
+	
+	var faction = document.getElementById('charFaction').value;
+	document.getElementById('faction').innerHTML = faction;
+
+	var raceError = document.getElementById('raceError');
+	var race = document.getElementById('charRace').value;
+	if (race == '') 
+		document.getElementById('raceError').innerHTML = 'Everyone has some sort of form';
+	else {
+		document.getElementById('raceError').innerHTML = '';
+		document.getElementById('race').innerHTML = race;
+	}
+	
+	var alignError = document.getElementById('alignError');
+	var alignment = document.getElementById('charAlign').value;
+	if (alignment == '') 
+		document.getElementById('bgError').innerHTML = 'Everyone comes from somewhere';
+	else {
+		document.getElementById('alignError').innerHTML = '';
+		document.getElementById('alignment').innerHTML = alignment;
+	}
+	
+	var level = document.getElementById('level').value;
+	document.getElementById('lv').innerHTML = level;
+	
+	var experience = document.getElementById('experience').value;
+	document.getElementById('xp').innerHTML = experience;
+	
+	var strength = document.getElementById('strInput').value;
+	document.getElementById('str').innerHTML = strength;
+	
+	var dexterity = document.getElementById('dexInput').value;
+	document.getElementById('dex').innerHTML = dexterity;
+	
+	var constitution = document.getElementById('consInput').value;
+	document.getElementById('cons').innerHTML = constitution;
+	
+	var intelligence = document.getElementById('intelInput').value;
+	document.getElementById('intel').innerHTML = intelligence;
+	
+	var wisdom = document.getElementById('wisInput').value;
+	document.getElementById('wis').innerHTML = wisdom;
+	
+	var charisma = document.getElementById('chrInput').value;
+	document.getElementById('chr').innerHTML = charisma;
+	
+	if (nameError.innerHTML == ''
+		&&	classError.innerHTML == ''
+		&&	bgError.innerHTML == ''
+		&&	plNameError.innerHTML == ''
+		&&	raceError.innerHTML == ''
+		&&	alignError.innerHTML == '') {
+		document.getElementById('form').style.display = 'none';
+		document.getElementById('topFields').style.display = 'flex';
+		document.getElementById('sheet').style.display = 'flex';
+		document.getElementById('col1').style.display = 'flex';
+		var characters = []; 
+		for (var i=1; i<characters.length; i++) {
+			characters[i] = {
+				"name" : charName,
+				"class" : charClass,
+				"background" : charBG,
+				"playerName" : playerName,
+				"faction" : faction,
+				"alignment" : alignment
+			};
+		}
 		
-		var level = document.getElementById('level').value;
-		document.getElementById('lv').innerHTML = level;
-		
-		var experience = document.getElementById('experience').value;
-		document.getElementById('xp').innerHTML = experience;
-		
-		var strength = document.getElementById('strInput').value;
-		document.getElementById('str').innerHTML = strength;
-		
-		var dexterity = document.getElementById('dexInput').value;
-		document.getElementById('dex').innerHTML = dexterity;
-		
-		var constitution = document.getElementById('consInput').value;
-		document.getElementById('cons').innerHTML = constitution;
-		
-		var intelligence = document.getElementById('intelInput').value;
-		document.getElementById('intel').innerHTML = intelligence;
-		
-		var wisdom = document.getElementById('wisInput').value;
-		document.getElementById('wis').innerHTML = wisdom;
-		
-		var charisma = document.getElementById('chrInput').value;
-		document.getElementById('chr').innerHTML = charisma;
-		
-		document.getElementById('statOutput').style.display = 'flex';
-	/*}
-	else if charName == null {
-		document.getElementById('name').innerHTML = "You're missing some values";
-	 }*/
+		// Kevin's code from here
+		var select = document.getElementById('selector');
+		for (var i=1; i<characters.length; i++) {
+			var character = characters[i];
+			var newCharacter = document.createElement('newChar');
+			newCharacter.textContent = newCharacter;
+			newCharacter.value = newCharacter;
+			newCharacter.appendChild(character);
+		}
+	}
 }
-
-
-    	
-   
+// Method called at the press of "new character" button
+function newCharacter() {
+	document.getElementById('form').style.display = 'flex';
+	document.getElementById('topFields').style.display = 'none';
+	document.getElementById('sheet').style.display = 'none';
+	document.getElementById('col1').style.display = 'none';
+}

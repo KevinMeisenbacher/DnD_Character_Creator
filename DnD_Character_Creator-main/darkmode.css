@@ -3,9 +3,14 @@
 	background-color: #070707;
 	color: white;
 }
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 600px;
+}
 /* Align basic info nice and neatly */
 .topFields {
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	border-color: red;
@@ -25,6 +30,7 @@
 }
 /* Make the box for the character name big and prominent */
 .namebox {
+	border-style: solid;
 	border-color: red;
 	width: 360px;
 	padding: 10px;
@@ -44,6 +50,7 @@
 	border-bottom-style: solid;
 	border-color: red;
 	width: 145px;
+	color: gold;
 }
 .textbox:invalid:required {
 	border-style: dashed;
@@ -54,7 +61,7 @@
 
 /* Neatly line up all columns */
 .columns {
-	display: flex;
+	display: none;
 	flex-direction: row;
 }
 /* Allow for stacks of columns */
@@ -275,9 +282,6 @@ button {
 	border-color: red;
 	border-radius: 5px;
 	background-color: #200707;
-	padding: 5px;
-	font-size: 120%;
-	margin-left: 10px;
 }
 
 /* Hide the character sheet until character is created */
