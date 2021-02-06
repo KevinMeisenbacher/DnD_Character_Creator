@@ -3,10 +3,18 @@
 	background-color: #070707;
 	color: white;
 }
+/* Layout for the initial form */
 .form {
 	display: flex;
 	flex-direction: column;
 	width: 600px;
+}
+/* Little input boxes for stats in the form */
+.statInput {
+	border-color: red;
+	border-radius: 5px;
+	margin: 2px;
+	width: 15px;
 }
 /* Align basic info nice and neatly */
 .topFields {
@@ -93,6 +101,9 @@
 	height: 45px;
 	border-radius: 60px;
 	margin-bottom: -200px;
+	font-size: 150%;
+	color: gold;
+	text-align: center;
 }
 .attributeInput:invalid:required {
 	border-style: dashed;
@@ -147,6 +158,7 @@
 	margin: -15px;
 	margin-left: 0px;
 	font-size: 150%;
+	color: gold;
 }
 /* Pack the skill labels closer together */
 .unbuffer {
@@ -213,6 +225,9 @@
 }
 input[type=checkBox] {
 	margin: 0px;
+	border-style: solid;
+	border-color: red;
+	background-color: black;
 }
 .savingThrowBox {
 	border-style: solid;

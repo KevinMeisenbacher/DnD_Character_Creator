@@ -1,10 +1,9 @@
 <!-- D&D Character Creator
-JS Group Assignment - Fall 2020, Section 4
+JS Group Assignment - Fall 2020, Section 4; updated as a personal project
 
 Group Members:
 Kevin Meisenbacher
 James Spoor
-Shalu Sharma
 Lakshika Bhanushali
 
 Professor: Shivali Dhaka -->
@@ -17,9 +16,10 @@ Professor: Shivali Dhaka -->
 	<link rel="stylesheet" href="darkmode.css">
 	
 </head>
-<body>
-	<div class="form" id="form">
-		<table>
+<body onload="initialize()">
+	<div class="columns" id="form">
+	  <div class="form">
+		<table> <!-- Supertable for form -->
 			<tr><td>What is your character's name?</td>
 			<td><input type="text" class="textbox" id="charName" required/></td>
 			<td><p id="nameError" style="color: red"/></td>
@@ -41,19 +41,99 @@ Professor: Shivali Dhaka -->
 			<td><p id="factionError" style="color: red"/></td>
 			</tr><tr>
 			<td>What is your character's race?</td>
-			<td><input class="textbox" id="charRace" required/></td>
+			<td><select class="textbox" id="charRace" onchange="initialize()" required>
+				<option value='dragonborn'>Dragonborn</option>
+				<option value='dwarf'>Dwarf</option>
+				<option value='elf'>Elf</option>
+				<option value='gnome'>Gnome</option>
+				<option value='halfElf'>Half Elf</option>
+				<option value='halfling'>Halfling</option>
+				<option value='halfOrc'>Half Orc</option>
+				<option value='human'>Human</option>
+				<option value='orc'>Orc</option>
+				<option value='tiefling'>Tiefling</option>
+			</select></td>
 			<td><p id="raceError" style="color: red"/></td>
 			</tr><tr>
+			<!-- Dropdown for alignment -->
 			<td>What is your character's alignment?</td>
-			<td><input class="textbox" id="charAlign"required/></td>
+			<td><select class="textbox" id="charAlign"required>
+				<option value="lawfulGood">Lawful Good</option>
+				<option value="lawfulNeutral">Lawful Neutral</option>
+				<option value="lawfulEvil">Lawful Evil</option>
+				<option value="neutralGood">Neutral Good</option>
+				<option value="trueNeutral">True Neutral</option>
+				<option value="neutralEvil">Neutral Evil</option>
+				<option value="chaoticGood">Chaotic Good</option>
+				<option value="chaoticNeutral">Chaotic Neutral</option>
+				<option value="chaoticEvil">Chaotic Evil</option>
+			</select></td>
 			<td><p id="alignError" style="color: red"/></td>
-			</tr><tr>
-			<td/><td><button onclick="createCharacter()" >CREATE CHARACTER</button></td>
-		</tr></table>
+			</tr>
+			<tr><td>Now to decide on your build</td>
+			<td>Remaining points: <label id="statsLeft"></label></td></tr>
+			<tr><td/><td><table><tr><!-- Subtable for stats -->
+				<tr><td><table><tr><!-- Strength Row -->
+					<td><button id="strDec5" onclick="strDec5()">-5</button></td>
+					<td><button id="strDec" onclick="strDec()">-</button></td></tr></table>
+					<td>Strength</td>
+					<td><input id="strInput" class="statInput"/></td>
+					<td><button id="strInc" onmousedown="strInc()">+</button></td>
+					<td><button id="strInc5" onmousedown="strInc5()">+5</button></td>
+				</tr>
+				<tr><td><table><tr><!-- Dex Row -->
+					<td><button id="dexDec5" onclick="dexDec5()">-5</button></td>
+					<td><button id="dexDec" onclick="dexDec()">-</button></td></tr></table>
+					<td>Dexterity</td>
+					<td><input id="dexInput" class="statInput"/></td>
+					<td><button id="dexInc" onmousedown="dexInc()">+</button></td>
+					<td><button id="dexInc5" onmousedown="dexInc5()">+5</button></td>
+				</tr>				
+				<tr><td><table><tr><!-- Constitution Row -->
+					<td><button id="conDec5" onclick="conDec5()">-5</button></td>
+					<td><button id="conDec" onclick="conDec()">-</button></td></tr></table>
+					<td>Constitution</td>
+					<td><input id="conInput" class="statInput"/></td>
+					<td><button id="conInc" onmousedown="conInc()">+</button></td>
+					<td><button id="conInc5" onmousedown="conInc5()">+5</button></td>
+				</tr>				
+				<tr><td><table><tr><!-- Intelligence Row -->
+					<td><button id="intDec5" onclick="intDec5()">-5</button></td>
+					<td><button id="intDec" onclick="intDec()">-</button></td></tr></table>
+					<td>Intelligence</td>
+					<td><input id="intInput" class="statInput"/></td>
+					<td><button id="intInc" onmousedown="intInc()">+</button></td>
+					<td><button id="intInc5" onmousedown="intInc5()">+5</button></td>
+				</tr>
+				<tr><td><table><tr><!-- Wisdom Row -->
+					<td><button id="wisDec5" onclick="wisDec5()">-5</button></td>
+					<td><button id="wisDec" onclick="wisDec()">-</button></td></tr></table>
+					<td>Wisdom</td>
+					<td><input id="wisInput" class="statInput"/></td>
+					<td><button id="wisInc" onmousedown="wisInc()">+</button></td>
+					<td><button id="wisInc5" onmousedown="wisInc5()">+5</button></td>
+				</tr>
+				<tr><td><table><tr><!-- Charisma Row -->
+					<td><button id="chaDec5" onclick="chaDec5()">-5</button></td>
+					<td><button id="chaDec" onclick="chaDec()">-</button></td></tr></table>
+					<td>Charisma</td>
+					<td><input id="chaInput" class="statInput"/></td>
+					<td><button id="chaInc" onmousedown="chaInc()">+</button></td>
+					<td><button id="chaInc5" onmousedown="chaInc5()">+5</button></td>
+				</tr>
+			</table>
+			<table><tr><td/>
+				<td><button onclick="createCharacter()">CREATE CHARACTER</button></td>
+			</tr><tr><td/>
+			<td><button onclick="defaultCharacter()">DEFAULT CHARACTER</button></td>
+			</tr></table>
+		</td></tr></table>
+	  </div>
+	  
 	</div>
 	<!-- Top Fields -->
-	<div class="topFields" id="topFields">
-		<img src="https://www.dicesaloon.com/system/production/dice_saloon/events/main_images/000/000/714/full/DND_%281%29.png?1496485238" 
+	<div class="topFields" id="topFields"><img src=
+		"https://www.dicesaloon.com/system/production/dice_saloon/events/main_images/000/000/714/full/DND_%281%29.png?1496485238" 
 		class="logo">
 		<table>
 			<tr><td><div class="namebox" id="name"></div></td></tr>
@@ -61,10 +141,10 @@ Professor: Shivali Dhaka -->
 		</table>
 		<table>
 			<tr>
-				<td><div class="textbox" id="class" required></div></td>
-				<td><div class="textbox" id="bg" required></div></td>
-				<td><div class="textbox" id="plName" required></div></td>
-				<td><div class="textbox" id="faction" required></div></td>
+				<td><div class="textbox" id="class"></div></td>
+				<td><div class="textbox" id="bg"></div></td>
+				<td><div class="textbox" id="plName"></div></td>
+				<td><div class="textbox" id="faction"></div></td>
 			</tr>
 			<tr>
 				<td>Class</td>
@@ -73,8 +153,8 @@ Professor: Shivali Dhaka -->
 				<td>Faction</td>
 			</tr>
 			<tr>
-				<td><div class="textbox" id="race" required></div></td>
-				<td><div class="textbox" id="alignment" required></div></td>
+				<td><div class="textbox" id="race"></div></td>
+				<td><div class="textbox" id="alignment"></div></td>
 				<td><input class="textbox" id="level"/></td>
 				<td><input class="textbox" id="experience"/></td>
 				<td><input class="textbox" id="dciNum"/></td>
@@ -96,27 +176,27 @@ Professor: Shivali Dhaka -->
 			<div class="attributesList">
 				<div class="attributeBox" id="strength">
 					<p id="statLabel">STRENGTH</p>
-					<input class="attributeInput" id="strInput"/>
+					<input class="attributeInput" id="strBox"/>
 				</div>
 				<div class="attributeBox" id="dexterity">
 					<p id="statLabel">DEXTERITY</p>
-					<input class="attributeInput" id="dexInput"/>
+					<input class="attributeInput" id="dexBox"/>
 				</div>
 				<div class="attributeBox" id="constitution">
 					<p id="statLabel">CONSTITUTION</p>
-					<input class="attributeInput" id="consInput"/>
+					<input class="attributeInput" id="conBox"/>
 				</div>
 				<div class="attributeBox" id="intelligence">
 					<p id="statLabel">INTELLIGENCE</p>
-					<input class="attributeInput" id="intelInput"/>
+					<input class="attributeInput" id="intBox"/>
 				</div>
 				<div class="attributeBox" id="wisdom">
 					<p id="statLabel">WISDOM</p>
-					<input class="attributeInput" id="wisInput"/>
+					<input class="attributeInput" id="wisBox"/>
 				</div>
 				<div class="attributeBox" id="charisma">
 					<p id="statLabel">CHARISMA</p>
-					<input class="attributeInput" id="chrInput"/>
+					<input class="attributeInput" id="chaBox"/>
 				</div>
 			</div>
 			<div class="stats">
@@ -136,30 +216,30 @@ Professor: Shivali Dhaka -->
 						</tr>
 					</table>
 				</div>
-				<div class="skillBox">
-					<table>
+				<div class="skillBox"> 	<!-- Ability modifiers -->
+					<table>				<!-- Base ability score-10 divided by 2 -->
 						<tr>
-							<td><input class="skillInput" id="profBonusInput"/></td>
+							<td><input class="skillInput" id="strBonus"/></td>
 							<td><p class="unbuffer">Strength</p></td>
 						</tr>
 						<tr>
-							<td><input class="skillInput" id="profBonusInput"/></td>
+							<td><input class="skillInput" id="dexBonus"/></td>
 							<td><p class="unbuffer">Dexterity</p></td>
 						</tr>
 						<tr>
-							<td><input class="skillInput" id="profBonusInput"/></td>
+							<td><input class="skillInput" id="conBonus"/></td>
 							<td><p class="unbuffer">Constitution</p></td>
 						</tr>
 						<tr>
-							<td><input class="skillInput" id="profBonusInput"/></td>
+							<td><input class="skillInput" id="intBonus"/></td>
 							<td><p class="unbuffer">Intelligence</p></td>
 						</tr>
 						<tr>
-							<td><input class="skillInput" id="profBonusInput"/></td>
+							<td><input class="skillInput" id="wisBonus"/></td>
 							<td><p class="unbuffer">Wisdom</p></td>
 						</tr>
 						<tr>
-							<td><input class="skillInput" id="profBonusInput"/></td>
+							<td><input class="skillInput" id="chaBonus"/></td>
 							<td><p class="unbuffer">Charisma</p></td>
 						</tr>
 					</table>
@@ -167,74 +247,92 @@ Professor: Shivali Dhaka -->
 				<div class="skillBox">
 					<table>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="acrobox"></td>
 							<td><input class="skillInput" id="acrobatics"/></td>
 							<td><p class="unbuffer">Acrobatics</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="animalBox"></td>
 							<td><input class="skillInput" id="animalHandling"/></td>
 							<td><p class="unbuffer">Animal Handling</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="arcanaBox"></td>
 							<td><input class="skillInput" id="arcana"/></td>
 							<td><p class="unbuffer">Arcana</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="athleticsBox"></td>
 							<td><input class="skillInput" id="athletics"/></td>
 							<td><p class="unbuffer">Athletics</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="deceptiBox"></td>
 							<td><input class="skillInput" id="deception"/></td>
 							<td><p class="unbuffer">Deception</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="histoBox"></td>
 							<td><input class="skillInput" id="history"/></td>
 							<td><p class="unbuffer">History</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="intimiBox"></td>
 							<td><input class="skillInput" id="intimidation"/></td>
 							<td><p class="unbuffer">Intimidation</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="insightBox"></td>
 							<td><input class="skillInput" id="insight"/></td>
 							<td><p class="unbuffer">Insight</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="investiBox"></td>
 							<td><input class="skillInput" id="investigation"/></td>
 							<td><p class="unbuffer">Investigation</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="medBox"></td>
 							<td><input class="skillInput" id="medicine"/></td>
 							<td><p class="unbuffer">Medicine</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="natureBox"></td>
 							<td><input class="skillInput" id="nature"/></td>
 							<td><p class="unbuffer">Nature</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="perceptionBox"></td>
 							<td><input class="skillInput" id="perception"/></td>
 							<td><p class="unbuffer">Perception</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="performaBox"></td>
 							<td><input class="skillInput" id="performance"/></td>
 							<td><p class="unbuffer">Performance</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="persuasionBox"></td>
 							<td><input class="skillInput" id="persuasion"/></td>
 							<td><p class="unbuffer">Persuasion</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="religionBox"></td>
 							<td><input class="skillInput" id="religion"/></td>
 							<td><p class="unbuffer">Religion</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="sleightBox"></td>
 							<td><input class="skillInput" id="sleightOfHand"/></td>
 							<td><p class="unbuffer">Sleight of Hand</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="stealthBox"></td>
 							<td><input class="skillInput" id="stealth"/></td>
 							<td><p class="unbuffer">Stealth</p></td>
 						</tr>
 						<tr>
+							<td><input type="checkBox" name="skillBox" id="survivalBox"></td>
 							<td><input class="skillInput" id="survival"/></td>
 							<td><p class="unbuffer">Survival</p></td>
 						</tr>
@@ -466,14 +564,17 @@ Professor: Shivali Dhaka -->
 			<input type="button" id="torso" value="Shirt" onclick="changeTorso()">
 			<input type="button" id="legs" value="Pants" onclick="changeLegs()"><br>
 			
-			<!-- Character loader and new character creator - Kevin Meisenbacher -->
+			<!-- Kevin Meisenbacher - Character loader and new character button -->
 			<select class="littleInput" id="selector">
-				<option>Choose a character</option>
 			</select>
 			<button id="newCharacter" onclick="newCharacter()">NEW CHARACTER</button>
 			
 			<!-- author - lakshika  -->
 		</div> <!-- End of last row -->
+		<table>
+			<tr><td><input class="littleInput" id="xpInput"></td></tr>
+			<tr><td><button onclick="addXP()">Add XP</button></td></tr>
+		</table>
 		<div class="statOutput" id="statOutput">
 			<table>
 				<tr><td>Name: </td><td><p id="name"> </p></td></tr>
